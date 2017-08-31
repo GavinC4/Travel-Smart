@@ -4550,13 +4550,7 @@ table.dataTable{width:100%;margin:0 auto;clear:both;border-collapse:separate;bor
 //     $('#thead').dataTable( {
 //     select: true
 // } );
-    // var today = moment().format('YYYY-MM-DD');
-    // var date = today;
-    // need if today is after P.M, must search tomorrow.
-
-    
-    var date = moment().add(1, 'days').format('YYYY-MM-DD'); 
-
+ var date = moment().format('YYYY-MM-DD');
      $.ajax({
       url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=mia&departure_date=" + date + "&apikey=p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY",
       // working on a link which will pick up with Form results and insert at the right part of the API string ;)
@@ -4564,7 +4558,6 @@ table.dataTable{width:100%;margin:0 auto;clear:both;border-collapse:separate;bor
       method: "GET"
 
       }).done(function(data) {
-
 // creating an array with the data from the API
       Array['#origin'] = data['origin'];
       // Array['#outbound'] = data['outbound'];
