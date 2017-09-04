@@ -6,7 +6,7 @@ body {
 	background-size: auto;
 	background-image: url('https://images.unsplash.com/photo-1453282716202-de94e528067c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ac9b38e57a8a0724058cdcbe6a687aa8');
 }
-.wrap {
+.wrap-search {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
