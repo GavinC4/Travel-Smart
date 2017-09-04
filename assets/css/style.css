@@ -16,7 +16,7 @@ body {
 	    -ms-flex-align: center;
 	        align-items: center;
 	height: 100vh;
-	opacity: 0.5;
+	opacity: 1;
 }
 
 .box {
@@ -145,4 +145,12 @@ input[type=text]:focus {
 }
 h3 {
 	color: black;
+}
+
+img {
+  display: block;
+  max-width:430px;
+  max-height:340px;
+  width: auto;
+  height: auto;
 }
