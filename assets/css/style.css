@@ -158,3 +158,11 @@ input[type=text]:focus {
 h3 {
 	color: black;
 }
+
+img {
+  display: block;
+  max-width:430px;
+  max-height:340px;
+  width: auto;
+  height: auto;
+}
