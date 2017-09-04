@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Train Scheduler</title>
+    <title>Travel Smart</title>
     <!--Link to reset css template -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--====== BOOTSTRAP ===== -->
@@ -32,24 +32,27 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.html">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">About</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="signup.html">Sign Up</a>
+      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success my-2 my-sm-0" href="signup.html">Sign Up</button>
-    </form>
     </div>
     </nav>
+    <br>
+    <br>
         <!-- Start of content wrap -->
+        <!-- Start of Sign Up Area -->
     <div class="wrap">
       <div class="container">
         <section class="row">
-          <div class="col-md-8">
+          <div class="col-md-8 up-wrap">
             <form class="contact-form">
-              <h1 class="contact-form-header">Sign Up.</h1>
+              <h1 class="contact-form-header">Sign Up</h1>
               <hr class="contact-hr"/>
               <div class="form-group">
                 <label class="label-name" for="name">First Name</label>
@@ -64,7 +67,7 @@
                 <input type="text" id="name_input" name="user_name" />
               </div>
               <div class="form-group">
-                <label class="label-mail" for="mail">E-mail</label>
+                <label class="label-mail" for="mail">E-mail     </label>
                 <input type="email" id="mail_input" name="user_mail" />
               </div>
               <div class="form-group">
@@ -72,15 +75,16 @@
                 <input type="text" id="name_input" name="user_name" />
               </div>                          
               <button class="submit-btn">Submit</button>
-            </form>
-            
+            </form>            
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 in-wrap">
+          <!-- End of Sign Up Area -->
 
-            <!-- Start of Connect With Me Area -->
+            <!-- Start of Sign In Area -->
             <section id="connect-with-me-area">
               <div class="connect-with-me-content">
-                <h1 class="connect-with-me-header">Sign in</h1>
+              <form>
+                <h1 class="connect-with-me-header">Log in</h1>
                 <hr />
                 <div id="images">
                 <div class="form-group">
@@ -91,13 +95,15 @@
                   <label class="label-mail" for="mail">Password</label>
                   <input type="email" id="mail_input" name="user_mail" />
                 </div>
+                <button class="submit-btn">Log In</button>
+                </form>
                   <!-- still needs image -->
                   <img src="assets/imgs/google.png" alt="" class="connect-with-me-photo">
                 </div>
               </div>
             </section>
 
-            <!-- End of the Connect With Me Area -->
+            <!-- End of Sign In Area -->
           </div>
         </section>
       </div>
@@ -113,6 +119,8 @@
     <!--====== UNDERSCORE===== -->
     <!-- underscore JS library CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- ===== FIREBASE ====== -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <!--====== YOUR LOCAL JS FILE ===== -->
     <!-- link to user JS file. Name will change -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
