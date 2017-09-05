@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> -->
     <!--====== FONTS ===== -->
     <!--Import Google Icon Font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
@@ -21,7 +21,7 @@
     <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">    
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">  -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
 </head>
@@ -69,10 +69,18 @@
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">
-                        <h3 class="panel-title"><strong>Fun Stuff</strong></h3>
+                        <div class="panel-title"></div>
                     </div>
-                    <div class="panel-body">                        
-                    </div>
+                    <div class="panel-body cityImage"></div>
+                    <!-- Place holder for About City -->
+                    <div class="panel-body cityAbout">About City</div>
+                    <hr>
+                    <!-- Place holder for Things to Do -->
+                    <!-- added a header for the things-to-do title - wenfang-->
+                    <div class="panel-body cityToDo"><h2></h2></div>
+                    <hr>
+                    <!-- Place holder for Flight info -->
+                    <div class="panel-body cityFlight">Flight Info</div>
                 </div>
             </div>
         </div> 
@@ -80,18 +88,25 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
     </script>
+
+    <!-- Added Jquery UI Libraries wenfang -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--====== UNDERSCORE===== -->
     <!-- underscore JS library CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
     <!-- ===== FIREBASE ====== -->
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <!--====== YOUR LOCAL JS FILE ===== -->
     <!-- link to user JS file. Name will change -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
+
 </body>
 
 </html>

@@ -7,6 +7,7 @@ body {
 	background-image: url('https://images.unsplash.com/photo-1453282716202-de94e528067c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ac9b38e57a8a0724058cdcbe6a687aa8');
 }
 .wrap-search {
+	
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -16,7 +17,7 @@ body {
 	    -ms-flex-align: center;
 	        align-items: center;
 	height: 100vh;
-	opacity: 0.7;
+	opacity: 0.9;
 }
 .up-wrap, .in-wrap, .about-wrap {
 	background: white;
@@ -161,8 +162,41 @@ h3 {
 
 img {
   display: block;
-  max-width:430px;
+  max-width:400px;
   max-height:340px;
   width: auto;
   height: auto;
+  text-align: center;
+  margin: auto;
 }
+
+.panel-title {
+	color: white;
+	font-size: 42px;
+	text-transform: uppercase;
+}
+
+.panel-body {
+	color: white;
+}
+
+.panel {
+	background-color: black;
+	margin: 2% 20% 0% 20%;
+	/*Anything less than 100% will show through the Getty images and make them look weird*/
+	/*opacity: 0.9;*/
+}
+
+.cityImage {
+	height: 400px;
+}
+
+hr {
+	background-color: gray;
+}
+
+/*Added indentation to the paragrahs in cityToDo div  -- wenfang*/
+p {
+    text-indent: 40px;
+}
+
