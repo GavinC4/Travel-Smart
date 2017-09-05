@@ -195,3 +195,8 @@ hr {
 	background-color: gray;
 }
 
+/*Added indentation to the paragrahs in cityToDo div  -- wenfang*/
+p {
+    text-indent: 40px;
+}
+
