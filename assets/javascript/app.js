@@ -7,10 +7,9 @@ var imageArray = [];
 
         // take value from input name
         cityName = $("#where").val().trim();
-
         console.log("where: " + cityName);
-
-        $(".login").hide();
+        // hides the search box
+        $(".wrap").hide();
 
         // Getty image apikey
         var apiKey = 'd6e3snbs3ch2qvk8wctwnjmc';
@@ -23,24 +22,20 @@ var imageArray = [];
         }}).done(function(data) {
 
             console.log("Ran ajax success");
-
-            // $(".box").html("<h2>" + cityName + "</h2>");
-
-            // loop through the first 10 images on Getty images
-            for(var i = 0; i < 10; i++) {
-                // push 10 imges into array
+            $(".panel-title").html("<strong>" + cityName + "</strong>");
+            // loop through images on Getty images
+            for(var i = 0; i < data.images.length; i++) {
+                // push images into an array - this would be used if we wanted to loop a certain number of images instead all of them
                 // imageArray.push(data.images[i].display_sizes[0].uri);
-
-                $(".box").html("<img src='" + data.images[i].display_sizes[0].uri + "'/>");
+                $(".cityImage").html("<img src='" + data.images[i].display_sizes[0].uri + "'/>");
             }
-
             console.log(imageArray);
             var i = 0;
             // set loop for X seconds
             var int = self.setInterval(changeImg, 1000 * 5);
             // displays images in DOM and increments i
             function changeImg() {
-                $(".box").html("<img src='" + data.images[i].display_sizes[0].uri + "'/>");
+                $(".cityImage").html("<img src='" + data.images[i].display_sizes[0].uri + "'/>");
                 i++;
             }
         })

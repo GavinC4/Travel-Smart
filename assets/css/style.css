@@ -17,7 +17,7 @@ body {
 	    -ms-flex-align: center;
 	        align-items: center;
 	height: 100vh;
-	opacity: 0.7;
+	opacity: 0.9;
 }
 .up-wrap, .in-wrap, .about-wrap {
 	background: white;
@@ -162,8 +162,36 @@ h3 {
 
 img {
   display: block;
-  max-width:430px;
+  max-width:400px;
   max-height:340px;
   width: auto;
   height: auto;
+  text-align: center;
+  margin: auto;
 }
+
+.panel-title {
+	color: white;
+	font-size: 42px;
+	text-transform: uppercase;
+}
+
+.panel-body {
+	color: white;
+}
+
+.panel {
+	background-color: black;
+	margin: 2% 20% 0% 20%;
+	/*Anything less than 100% will show through the Getty images and make them look weird*/
+	/*opacity: 0.9;*/
+}
+
+.cityImage {
+	height: 400px;
+}
+
+hr {
+	background-color: gray;
+}
+
