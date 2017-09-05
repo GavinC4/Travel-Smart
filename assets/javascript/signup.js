@@ -9,7 +9,7 @@
   };
   firebase.initializeApp(config);
 
-  start sign up form
+  // start sign up form
   $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
   var $this = $(this),
