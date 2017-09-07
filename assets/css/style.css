@@ -195,8 +195,23 @@ hr {
 	background-color: gray;
 }
 
-/*Added indentation to the paragrahs in cityToDo div  -- wenfang*/
+/*The following are some styles added by me  -- wenfang*/
 p {
     text-indent: 40px;
 }
 
+.panel {
+	padding: 30px;
+}
+
+.cityImage {
+	position: relative;
+	display: none;
+	padding-top: 20px;
+}
+
+.backbutton {
+	position: absolute;
+	right: 15px;
+	bottom: 0px;
+}
