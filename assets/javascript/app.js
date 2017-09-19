@@ -40,12 +40,14 @@ $("#where").autocomplete({
 });
 
 var int;  //changed the interval variable scope to global  -- wenfang
+var srchResPage = false; //a flag for checking if current 'page' is search page or result page
 
     // on click function
     $(".submit").on("click" , function(event) {
         event.preventDefault();
 
         imageArray = [];  //reset imageArray
+        srchResPage = true;
 
         // take value from input name
         var cityInput = $("#where").val().trim();  //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
@@ -56,13 +58,13 @@ var int;  //changed the interval variable scope to global  -- wenfang
         $(".wrap").hide();
 
         // Getty image apikey
-        var apiKey = 'd6e3snbs3ch2qvk8wctwnjmc';
+        var gettyApiKey = 'd6e3snbs3ch2qvk8wctwnjmc';
         // Getty image ajax call
         $.ajax({
             type:'GET',
             url:"https://api.gettyimages.com/v3/search/images/creative?fields=display_set&phrase=" + cityName,
             beforeSend: function (request) {
-            request.setRequestHeader("Api-Key", apiKey);
+            request.setRequestHeader("Api-Key", gettyApiKey);
         }}).done(function(data) {
 
             console.log("Ran ajax success");
@@ -93,6 +95,47 @@ var int;  //changed the interval variable scope to global  -- wenfang
                 if(i===imageArray.length)  //need to reset i to 0  -- wenfang
                     i=0;
             }
+        });
+
+        // World Weather Online apikey
+        $(".cityWeather").show();
+        $("#localTimeWeather").empty();
+        var wwoApiKey = 'ac4c2f19b48740fd9ce201023171209';
+        var weatherURL = "http://api.worldweatheronline.com/premium/v1/weather.ashx?q=" + cityName + "&format=json&key=" + wwoApiKey;
+        var tzURL = "http://api.worldweatheronline.com/premium/v1/tz.ashx?q=" + cityName + "&format=json&key=" + wwoApiKey;
+        $.ajax({
+            url: tzURL,
+            method: "GET"
+        }).done(function(localtime) {
+            $("#localTimeWeather").prepend("Local Time:" + "\xa0\xa0\xa0\xa0" + localtime.data.time_zone[0].localtime + "<br/>");
+        });
+
+        $.ajax({
+            url: weatherURL,
+            method: "GET"
+        }).done(function(localweather) {
+            $("#localTimeWeather").append("Current Weather: " + localweather.data.current_condition[0].weatherDesc[0].value + 
+                                        "\xa0\xa0\xa0\xa0\xa0\xa0" + "Temperature (F): " + localweather.data.current_condition[0].temp_F +
+                                        "\xa0\xa0\xa0\xa0\xa0\xa0" + "Wind Speed (Mph): " + localweather.data.current_condition[0].windspeedMiles +
+                                        "\xa0\xa0\xa0\xa0\xa0\xa0" + "Humidity: " + localweather.data.current_condition[0].humidity);
+            var minTemp = "<tr><td>Avg Min Temp(F)<td>";
+            var maxTemp = "<tr><td>Abs Max Temp(F)<td>";
+            var rainFall = "<tr><td>Avg Daily Rainfall(in)<td>";
+            for (var i=0; i<12; i++) {
+                if(i===11) {
+                    minTemp += localweather.data.ClimateAverages[0].month[i].avgMinTemp_F + "</td></tr>";
+                    maxTemp += localweather.data.ClimateAverages[0].month[i].absMaxTemp_F + "</td></tr>";
+                    rainFall += localweather.data.ClimateAverages[0].month[i].avgDailyRainfall + "</td></tr>";
+                }
+                else {
+                    minTemp += localweather.data.ClimateAverages[0].month[i].avgMinTemp_F + "</td><td>";
+                    maxTemp += localweather.data.ClimateAverages[0].month[i].absMaxTemp_F + "</td><td>";
+                    rainFall += localweather.data.ClimateAverages[0].month[i].avgDailyRainfall + "</td><td>";
+                }
+            }
+            $("#weather-table > tbody").append(minTemp);
+            $("#weather-table > tbody").append(maxTemp);
+            $("#weather-table > tbody").append(rainFall);
         });
         
         /* Added codes for importing things-to-do contents to the cityToDo div -- wenfang */
@@ -133,8 +176,8 @@ var int;  //changed the interval variable scope to global  -- wenfang
     aRef.on("child_added", function(snapshot) {
         var destHead = $("<h4>").text(snapshot.key);
         var destDescription = $("<p>").text(snapshot.val()["Paragraph 1"]);
-        
-        $(".popularSrches").append(destHead, destDescription);
+        if(!srchResPage)
+            $(".popularSrches").append(destHead, destDescription);
     });
 
 
