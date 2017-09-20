@@ -91,7 +91,7 @@
                     <p>Point of Origin: </p>
                     <input id="origin" type="text" class="input autocomplete">
                     <p>Where are you going? </p>
-                    <input id="where" type="text" class="input autocomplete">
+                    <input id="destination" type="text" class="input where autocomplete">
                     <p>When would you like to get there?: </p>
                     <input id="departureDate" type="text" class="input datepicker form-control" />
                 </div>
@@ -321,8 +321,8 @@ console.log(data[0].label);
 console.log(data[1]);
 console.log(log);
 console.log(log[0]);
-console.log(where);
-console.log(where.value);
+// console.log(where);
+// console.log(where.value);
  
 }
 });
@@ -427,6 +427,7 @@ $.ajax({
       $('#price').append("<br> $" + data.results[9].price);
       $('#price').append("<br> $" + data.results[10].price);
       $('#destination').append("<br>" + data.results[0].destination);
+      console.log(data.results[0].destination);
  
     $('#destination').append("<br>" + data.results[1].destination);
     $('#destination').append("<br>" + data.results[2].destination);
