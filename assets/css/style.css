@@ -1,165 +1,174 @@
 html {
-		font-family: 'Raleway', sans-serif;
-
+        font-family: 'Raleway', sans-serif;
+ 
 }
 body {
-	background-size: auto;
-	background-image: url('https://images.unsplash.com/photo-1453282716202-de94e528067c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ac9b38e57a8a0724058cdcbe6a687aa8');
+    background-size: auto;
+    background-image: url('https://images.unsplash.com/photo-1453282716202-de94e528067c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ac9b38e57a8a0724058cdcbe6a687aa8');
 }
 .wrap-search {
-	
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	height: 100vh;
-	opacity: 0.9;
+    
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    opacity: 0.9;
 }
 .up-wrap, .in-wrap, .about-wrap {
-	background: white;
-	color: black;
+    background: white;
+    color: black;
 }
 .up-wrap{
-
+ 
 }
 .in-wrap {
-
+ 
 }
 .about-wrap {
-
+ 
 }
 .box {
-	height: 50vh;
-	min-height: 400px;
-	width: 50vw;
-	min-width: 350px;
-	background-color: black;	
-	background-size: auto;
-	background-position: center;
-	margin: auto;
-	background-repeat: no-repeat;
-	color: white;
-	box-shadow: 5px 32px 61px 0px rgba(0,0,0,0.75);
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	padding: 30px;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	-webkit-justify-content: space-around;
-	    -ms-flex-pack: distribute;
-	        justify-content: space-around;
+    position: relative;
+    height: 65vh;
+    min-height: 400px;
+    width: 50vw;
+    min-width: 350px;
+    background-color: black;    
+    background-size: auto;
+    background-position: center;
+    margin: auto;
+    background-repeat: no-repeat;
+    color: white;
+    box-shadow: 5px 32px 61px 0px rgba(0,0,0,0.75);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 30px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
 }
-
+ 
 .login {
-	-webkit-box-flex: 1;
-	-webkit-flex: 1 1 auto;
-	    -ms-flex: 1 1 auto;
-	        flex: 1 1 auto;
-	background: rgba(0,0,0,0.8);
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	padding: 40px;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	max-height: 400px;
-	max-width: 500px;
+    position: relative;
+    bottom: 90px; 
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+ /*   background: rgba(0,0,0,0.8);*/
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 40px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-height: 400px;
+    max-width: 500px;
 }
-
+ 
 .brand {
-	border-bottom: 2px solid white;
+    position: relative;
+    bottom: 10px;
+    border-bottom: 2px solid white;
 }
-
-
-
+ 
+ 
+ 
 .inputs {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
-
+ 
 .inputs > * {
-	-webkit-box-flex: 1;
-	-webkit-flex: 1 1;
-	    -ms-flex: 1 1;
-	        flex: 1 1;
-	-webkit-justify-content: space-around;
-	    -ms-flex-pack: distribute;
-	        justify-content: space-around;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1;
+        -ms-flex: 1 1;
+            flex: 1 1;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
 }
-
+ 
 .input {
-	border:none;
-	padding:15px 20px;
-	border-radius:25px;
-	background:rgba(255,255,255,.4);
-	color: white;
-	font-size: 16px;
+    border:none;
+    padding:15px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.4);
+    color: white;
+    font-size: 16px;
 }
-
+ 
 .buttons {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;      
+/*  position: relative;
+    margin-top: 10px;*/
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;      
 }
-
+ 
 .submit {
-	text-transform:uppercase;
-	padding: 10px 20px;
-	margin-top: 25px;
-	background-color: #03a9f4;
-	border: 1px solid #03a9f4;
-	border-radius: 40px;
-	outline: none;
-	color: white;
+    position: absolute;
+    text-transform:uppercase;
+    padding: 10px 20px;
+    margin-top: 45px;
+    background-color: #03a9f4;
+    border: 1px solid #03a9f4;
+    border-radius: 40px;
+    outline: none;
+    color: white;
 }
-
+ 
 input[type=text] {
     -webkit-box-flex: 1;
     -webkit-flex: 1 1;
         -ms-flex: 1 1;
             flex: 1 1;
 }
-
+ 
 input[type=text]:focus {
     outline: none;
 }
-
+ 
 .submit:hover {
-	background-color: #b3e5fc;
-	border-color: #b3e5fc;
+    background-color: #b3e5fc;
+    border-color: #b3e5fc;
 }
 h3 {
-	color: black;
+    color: black;
 }
-
+ 
 img {
   display: block;
   max-width:400px;
@@ -169,53 +178,67 @@ img {
   text-align: center;
   margin: auto;
 }
-
+ 
 .panel-title {
-	color: white;
-	font-size: 42px;
-	text-transform: uppercase;
+    color: white;
+    font-size: 42px;
+    text-transform: uppercase;
 }
-
+ 
 .panel-body {
-	color: white;
+    color: white;
 }
-
+ 
 .panel {
-	background-color: black;
-	/*margin: 2% 20% 0% 20%;*/
-	margin: 2% 18% 0% 18%;
-	/*Anything less than 100% will show through the Getty images and make them look weird*/
-	/*opacity: 0.9;*/
-}
 
+    background-color: black;
+    margin: 2% 20% 0% 20%;
+    /*Anything less than 100% will show through the Getty images and make them look weird*/
+    /*opacity: 0.9;*/
+
+}
+ 
 .cityImage {
-	height: 400px;
+    height: 400px;
 }
-
+ 
 hr {
-	background-color: gray;
+    background-color: gray;
 }
-
-/*The following are some styles added by me  -- wenfang*/
+ 
+/*Added indentation to the paragrahs in cityToDo div  -- wenfang*/
 p {
     text-indent: 40px;
-}
-
+ }
+ 
 .panel {
-	padding: 30px;
+    padding: 30px;
 }
-
+ 
 .cityImage {
 	position: relative;
 	display: none;
 	padding-top: 20px;
 	margin-bottom: 20px;
 }
-
+ 
 .backbutton {
-	position: absolute;
-	right: 15px;
-	bottom: 0px;
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+}
+.date-form { margin: 10px; }
+label.control-label span { cursor: pointer; }
+thead {
+    color: white;
+}
+td {
+    color: white;
+}
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 700;
 }
 
 .cityWeather {
