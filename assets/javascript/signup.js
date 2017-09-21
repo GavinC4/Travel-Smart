@@ -12,6 +12,9 @@ firebase.initializeApp(config);
 // Create a variable to reference the database.
 var database = firebase.database()
 
+//displays modal
+// $('#myModal').modal('show');
+
 // Capture Button Click
     $("#add-user").on("click", function(event) {
       // prevent page from refreshing when form tries to submit itself
@@ -25,8 +28,29 @@ var database = firebase.database()
       var password = $("#password-input").val().trim();
 
       // Console log each of the user inputs to confirm we are receiving them
-      console.log(firstName);
-      console.log(lastName);
-      console.log(userName);
-      console.log(email);
-      console.log(password);
+      console.log(firstName, lastName, userName, email, password);
+      
+      if((firstName=="") || (lastName=="") || (userName=="") || (email=="") || (password=="")) {
+
+        setError();
+             
+      }
+
+      else {
+          database.ref().push({
+              firstName: firstName,
+              lastName: lsatName,
+              userName: userName,
+              email: email,
+              password: password,
+              created: firebase.database.ServerValue.TIMESTAMP,
+              modified: firebase.database.ServerValue.TIMESTAMP
+
+            });
+      }
+
+      $('input').val("");
+
+      });
+
+    };
