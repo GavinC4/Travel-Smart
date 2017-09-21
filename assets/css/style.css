@@ -190,10 +190,12 @@ img {
 }
  
 .panel {
+
     background-color: black;
     margin: 2% 20% 0% 20%;
     /*Anything less than 100% will show through the Getty images and make them look weird*/
     /*opacity: 0.9;*/
+
 }
  
 .cityImage {
@@ -214,9 +216,10 @@ p {
 }
  
 .cityImage {
-    position: relative;
-    display: none;
-    padding-top: 20px;
+	position: relative;
+	display: none;
+	padding-top: 20px;
+	margin-bottom: 20px;
 }
  
 .backbutton {
@@ -236,4 +239,8 @@ label {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: 700;
+}
+
+.cityWeather {
+	display: none;
 }
