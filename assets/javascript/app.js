@@ -40,8 +40,13 @@ database.ref("Posts").on("child_added", function(snap) {
 }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
+
 // autocomplete is not a function?
 $("#where").autocomplete({
+
+$(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
+ 
+$(".where").autocomplete({
   source: cityOptions
 });
 
@@ -51,15 +56,18 @@ var srchResPage = false; //a flag for checking if current 'page' is search page 
     // on click function
     $(".submit").on("click" , function(event) {
         event.preventDefault();
+        $(".container-fluid").show(); // Mark added container-fluid show rule on submit
+ 
 
         imageArray = [];  //reset imageArray
         srchResPage = true;
 
         // take value from input name
-        var cityInput = $("#where").val().trim();  //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
+        var cityInput = $(".where").val().trim();  //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
         var arr = cityInput.split(",");
         cityName = arr[0];
-        console.log("where: " + cityName);
+        console.log("cityName var is: " + cityName);
+
         // hides the search box
         $(".wrap").hide();
 
@@ -185,5 +193,4 @@ var srchResPage = false; //a flag for checking if current 'page' is search page 
         if(!srchResPage)
             $(".popularSrches").append(destHead, destDescription);
     });
-
 

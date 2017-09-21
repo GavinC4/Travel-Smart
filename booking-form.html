@@ -40,97 +40,224 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
 </head>
-<body>
-    <!-- Starting Modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title text-center">Sign In</h4>
-                </div>
-                <div class="modal-body">
-                <div class="form-group">
-                  <label class="userName" for="name">User Name</label>
-                  <input type="text" id="username_input" name="user_name" />
-                </div>
-                <div class="form-group">
-                  <label class="password" for="mail">Password</label>
-                  <input type="password" id="password_input" name="user_password" />
-                </div>
-                <button class="submit-btn">Sign In</button>
-                </form>
-                  <!-- still needs image -->
-                  <img src="assets/imgs/google.png" alt="" class="connect-with-me-photo">
-                </div>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-       <!--====== HTML CONTENT ===== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Travel Smart</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="trending.html">Trending</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="signup.html">Sign Up</a>
-      </li>
-    </ul>    
-    </div>
-    </nav>
-    
-    <!-- Search Bar -->
-   <!--  <div class="wrap wrap-search">  
-        <div class="box">
+<script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var origin = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var origin=getCookie("originname");
+    if (origin != "") {
+        alert("Your origin is " + origin);
+    } else {
+       // origin = prompt("Please enter your origin:","");
+       origin = $(origin);
+       if (origin != "" && origin != null) {
+           setCookie("originname", origin, 30);
+       }
+    }
+}
+
+</script>
+<script>
+
+function setCookie(dname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var destination = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var destination=getCookie("destinationname");
+    if (destination != "") {
+        alert("Your destination is " + destination);
+    } else {
+       // destination = prompt("Please enter your destination:","");
+       destination = $(destination);
+       if (destination != "" && destination != null) {
+           setCookie("destinationname", destination, 30);
+       }
+    }
+}
+
+</script>
+<script>
+$( document ).ready(function() {
+// $(".flights").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
+// // on click function
+//     $("#flights").on("click" , function(event) {
+//       console.log("click")
+//         $(".flights").show(); // Mark added container-fluid show rule on submit
+//      });
+$( function(checkIn) {
+  var dateToday = new Date();
+  var dates = $("#start-date").datepicker({
+    defaultDate: "+2d",
+    changeMonth: true,
+    numberOfMonths: 1,
+    minDate: dateToday,
+    dateFormat: "yy/mm/dd",
+    onSelect: function(selectedDate) {
+        var option = this.id == "start-date" ? "minDate" : "maxDate",
+        instance = $(this).data("datepicker"),
+        date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+        console.log("Printing this: " + this); // found the input form
+        console.log("Printing this.value: " + this.value);
+        checkIn = (this.value); 
+        console.log("This is the checkIn: " + checkIn); // returns object, unless reset to this.value
+        departure_date = (checkIn);
+        date = (departure_date);
+        console.log("This is the departure_date: " + departure_date);
+        console.log("This is the date: " + date);
+        // console.log(minDate);
+        // console.log(maxDate);
+        dates.not(this).datepicker("option", option, date);
+        // console.log(option.start-date);
+        // console.log(option.maxDate);
+        // console.log(date[1]);
+        console.log("Printing dates[0].value: " + dates[0].value);
+        console.log("Printing date " + date); // this consoles the full dates
+        // log(checkIn);
+    }
+  });
+});
+$( function(checkOut) {
+  var dateToday = new Date();
+  var dates = $("#end-date").datepicker({
+    defaultDate: "+2d",
+    changeMonth: true,
+    numberOfMonths: 1,
+    minDate: dateToday,
+    dateFormat: "yy/mm/dd",
+    onSelect: function(selectedDate) {
+        var option = this.id == "end-date" ? "minDate" : "maxDate",
+        instance = $(this).data("datepicker"),
+        date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+        console.log("Printing this: " + this); // found the input form
+        console.log("Printing this.value: " + this.value);
+        checkOut = (this.value); 
+        console.log("This is the checkOut: " + checkOut); // returns object, unless reset to this.value
+        return_date = (checkOut);
+        console.log("This is the return_date: " + return_date);
+        // console.log(minDate);
+        // console.log(maxDate);
+        dates.not(this).datepicker("option", option, date);
+        // console.log(option.start-date);
+        // console.log(option.maxDate);
+        // console.log(date[1]);
+        console.log("Printing dates[0].value: " + dates[0].value);
+        console.log("Printing date " + date); // this consoles the full dates
+        // log(checkOut);
+    }
+  });
+});
+
+
+}); // end
+
+</script>
+
+<div class="wrap wrap-search">  
+<div class="box">
             <div class="login">
                 <div class="brand">
                     <h1>Here We Go!<i class="fa fa-paper-plane"></i></h1>
                 </div>
-                <div class="inputs">
-                    <p>Where do you want to go?</p>
-                    <input id="where" type="text" class="input">
-                    <p>When do you want to get there?</p>
-                    <input id="when" type="text" class="input">
-                </div>
-                <div class="buttons">
-                    <button class="submit">Let's Go!</button>
-                </div>
+   <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
+            <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id">
+            <div class="form-group">
+               <label for="lodging">Book Your Stay</label> 
+               <select class="form-control" id="lodgingID" name="lodgingID" placeholder="All Lodging">
+                  <option value="103" selected="selected">
+                     All Options
+                  </option>
+                  <option id="flights" value="50">
+                     Flights
+                  </option>
+                  <option value="9">
+                     Hotels
+                  </option>
+                  <option value="21">
+                     Cars
+                  </option>
+                  <option value="5">
+                     Train
+                  </option>
+<!--                   <option value="7">
+                     Other Vacation or Travel ToDo
+                  </option> -->
+                  <!-- <option value="7">
+                     Bundle Deals ToDo coming soon 
+                  </option> -->
+               </select>
             </div>
-        </div>
-    </div> Search Bar Beta *Mark -->
-     <div class="wrap wrap-search">  
-        <div class="box">
-            <div class="login">
-                <div class="brand">
-                    <h1>Here We Go!<i class="fa fa-paper-plane"></i></h1>
-                </div>
+
                 <div class="inputs">
-                    <p>Point of Origin: </p>
-                    <input id="origin" type="text" class="input autocomplete">
-                    <p>Where are you going? </p>
-                    <input id="destination" type="text" class="input where autocomplete">
-                    <p>When would you like to get there?: </p>
-                    <input id="departureDate" type="text" class="input datepicker form-control" />
-                </div>
-                <div class="buttons">
-                    <button class="submit">Let's Go!</button>
-                </div>
+            <div class="form-group flights">
+               <label for="origin">Point of Origin: </label> 
+               <input id="origin" type="text" class="input autocomplete">
             </div>
-        </div>
-    </div>
-    <!-- display search related images here -->
+            <div class="form-group flights">
+               <label for="destination">Where are you going? </label> 
+               <input id="where" type="text" class="input autocomplete">
+            </div>
+            <!--check in element-->
+            <div class="form-group">
+               <label for="check-in">Check In</label> <!-- <input type="textfield" class="form-control" id="check-in" placeholder="12.20.2014"> -->
+               <input type="text"  class="form-control" id="start-date" name="checkIn" placeholder="yyyy/mm/dd">
+            </div>
+            <!--check out element-->
+            <div class="form-group">
+               <label for="check-out">Check Out</label> <!-- <input type="textfield" class="form-control" id="check-out" placeholder="12.27.2014"> -->
+               <input type="text" class="form-control" id="end-date" name="checkOut" placeholder="yyyy/mm/dd" >
+            </div>
+               </div>
+            <!--submit-->
+            <div class="buttons form-group">
+               <button name="Submit" class="submit btn btn-sm">Let's Go!</button>
+            </div>
+         </form>
+            </div>
+         </div>
+      </div>
+ <!-- display search related images here -->
     <div class="container-fluid">
             <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
@@ -226,30 +353,8 @@
                 </div>
             </div>
         </div> 
-    <!--====== BOOTSTRAP ===== -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
 
-    <!-- Added Jquery UI Libraries wenfang -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!--====== UNDERSCORE===== -->
-    <!-- underscore JS library CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
-    <!-- ===== FIREBASE ====== -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    <!--====== YOUR LOCAL JS FILE ===== -->
-    <!-- link to user JS file. Name will change -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-    
-
-
-    <script type="text/javascript">
+<script type="text/javascript">
 //     $(".date-picker").datepicker();
  
 //     $(".date-picker").on("change", function () {
@@ -262,55 +367,55 @@
 // });
  
 // MomentJS if wanted to automate departureDate
-    var date = moment().add(1, 'days').format('YYYY-MM-DD');  
+    // var date = (date); 
     // var date = moment().format('YYYY-MM-DD');  // Today, in MomentJS - however to note, Amadeus doesn't allow promt searches with Inspiration. Must add +1 day to proceed. -- Mark
     // var date = (date);  
  
-    var options = {
-    minDate: new Date(2017, 0, 1, 12),
-    maxDate: new Date(2070, 11, 31),
-    dateFormat: "yy/mm/dd",
-    changeMonth: true,
-    changeYear: true,
-    gotoCurrent:false,
-    // dateFormat: "m/d/yy"
-    // dateFormat: "yyyy/mm/dd",
-    beforeShow: function (inputEl, datepickerInst) {
-        console.log("before show");
-        //datepickerInst.input[0].value =  datepickerInst.selectedMonth + "/" + datepickerInst.selectedDay + "/" + datepickerInst.selectedYear;
+//     var options = {
+//     minDate: new Date(2017, 0, 1, 12),
+//     maxDate: new Date(2070, 11, 31),
+//     dateFormat: "yy/mm/dd",
+//     changeMonth: true,
+//     changeYear: true,
+//     gotoCurrent:false,
+//     // dateFormat: "m/d/yy"
+//     // dateFormat: "yyyy/mm/dd",
+//     beforeShow: function (inputEl, datepickerInst) {
+//         console.log("before show");
+//         //datepickerInst.input[0].value =  datepickerInst.selectedMonth + "/" + datepickerInst.selectedDay + "/" + datepickerInst.selectedYear;
  
-        console.log("selected Year/Month/Day", datepickerInst.selectedYear,
-            "/", datepickerInst.selectedMonth,
-            "/", datepickerInst.selectedDay);
-        console.log("current Year/Month/Day", datepickerInst.currentYear,
-            "/", datepickerInst.currentMonth,
-            "/", datepickerInst.currentDay);
-        console.log("draw Year/Month/Day", datepickerInst.drawYear,
-            "/", datepickerInst.drawMonth,
-            "/", datepickerInst.drawDay);
+//         console.log("selected Year/Month/Day", datepickerInst.selectedYear,
+//             "/", datepickerInst.selectedMonth,
+//             "/", datepickerInst.selectedDay);
+//         console.log("current Year/Month/Day", datepickerInst.currentYear,
+//             "/", datepickerInst.currentMonth,
+//             "/", datepickerInst.currentDay);
+//         console.log("draw Year/Month/Day", datepickerInst.drawYear,
+//             "/", datepickerInst.drawMonth,
+//             "/", datepickerInst.drawDay);
  
-        console.log(datepickerInst);
-        //datepickerInst.input[0].hidden = true;
+//         console.log(datepickerInst);
+//         //datepickerInst.input[0].hidden = true;
  
-    },
-    onClose: function(date, inst){
-        console.log(date);
-        var date = (departureDate.value);
-        console.log(date);
-        console.log(departureDate.value);
-        // var date = (date);
-        console.log(inst);
+//     },
+//     onClose: function(date, inst){
+//         console.log(date);
+//         var date = (departureDate.value);
+//         console.log(date);
+//         console.log(departureDate.value);
+//         // var date = (date);
+//         console.log(inst);
 
 
 
 
-        // var date = (date);
-        // inst.input[0].value=inst.selectedMonth + "/" + inst.selectedYear;
-    }
+//         // var date = (date);
+//         // inst.input[0].value=inst.selectedMonth + "/" + inst.selectedYear;
+//     }
  
-};
+// };
  
-$(".datepicker").datepicker(options);
+// $(".datepicker").datepicker(options);
  
     
  
@@ -320,17 +425,17 @@ $(".datepicker").datepicker(options);
     //     console.log(date);
     // }
     // var date = (date);
-    
+    // callback (checkIn);checkOut //
     var apiKey = "p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY";
     // var origin = (ui.item.value);
     // console.log(ui.item.value);
-    console.log(date);
+    // console.log(dates);
     console.log(apiKey);
  
-            $(function() {
-                function log( message ) {
-                    $( "<div>" ).text( message ).prependTo( "#log" );
-                    $( "#log" ).scrollTop( 0 );
+$(function() {
+   function log( message ) {
+      $( "<div>" ).text( message ).prependTo( "#log" );
+      $( "#log" ).scrollTop( 0 );
 }
 $( ".autocomplete" ).autocomplete({
 source: function( request, response ) {
@@ -349,8 +454,8 @@ console.log(data[0].label);
 console.log(data[1]);
 console.log(log);
 console.log(log[0]);
-// console.log(where);
-// console.log(where.value);
+console.log(where);
+console.log(where.value);
  
 }
 });
@@ -361,24 +466,27 @@ log( ui.item ?
 "Selected: " + ui.item.label :
 "Nothing selected, input was " + this.value);
  
-console.log(ui.item.label); // this is the Full Airport Name with Identifier and Title
+console.log("This prints the ui.item.label: " + ui.item.label); // this is the Full Airport Name with Identifier and Title
 // $("#where").value(ui.item.label);
-console.log(ui.item); // this is the Airport Object 
-console.log(ui.item.value); // this is the Airport Identifier
-console.log(cityName);
-console.log(date);
+console.log("This prints the ui.item: " + ui.item); // this is the Airport Object 
+console.log("This prints the ui.item.value: " + ui.item.value); // this is the Airport Identifier
+// console.log("This is the var cityName: " + cityName);
+// console.log(date);
 var origin = (ui.item.value);
-console.log(origin);
+console.log("This is the var origin: " + origin);
+
+// }
+// }),
 // console.log(origin[0]);
 // console.log(origin[1]);
-var where = (where);
+// var where = ("This is the var where: " + where);
 
 
  
  
 $(".submit").on("click" , function(event) {
 $.ajax({
-      url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&departure_date=" + date + "&apikey=" + apiKey,
+      url: "https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + date + "&apikey=" + apiKey,
 
       // https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&departure_date=" + date + "&apikey=" + apiKey, // Working Inspiration Search 
  
@@ -455,7 +563,6 @@ $.ajax({
       $('#price').append("<br> $" + data.results[9].price);
       $('#price').append("<br> $" + data.results[10].price);
       $('#destination').append("<br>" + data.results[0].destination);
-      console.log(data.results[0].destination);
  
     $('#destination').append("<br>" + data.results[1].destination);
     $('#destination').append("<br>" + data.results[2].destination);
@@ -504,5 +611,4 @@ $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
 });
 </script>
 </body>
-
 </html>

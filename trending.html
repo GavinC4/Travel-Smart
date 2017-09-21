@@ -19,12 +19,11 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
     <!-- Font Awesome link which enable fonts and icons.  -->
     <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
-    <!-- JS Resources needed in Header -->
         <!--====== BOOTSTRAP ===== -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
     </script>
- 
+
     <!-- Added Jquery UI Libraries wenfang -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -33,43 +32,24 @@
     <script src="assets/javascript/datatables.js"></script>
     <!-- MomenJS CDN | Mark-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-   
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
     <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">  -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
+    <style>
+/*    @import url('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');*/
+
+.date-form { margin: 10px; }
+label.control-label span { cursor: pointer; }
+thead {
+    color: white;
+}
+td {
+    color: white;
+}
+</style>
 </head>
 <body>
-    <!-- Starting Modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title text-center">Sign In</h4>
-                </div>
-                <div class="modal-body">
-                <div class="form-group">
-                  <label class="userName" for="name">User Name</label>
-                  <input type="text" id="username_input" name="user_name" />
-                </div>
-                <div class="form-group">
-                  <label class="password" for="mail">Password</label>
-                  <input type="password" id="password_input" name="user_password" />
-                </div>
-                <button class="submit-btn">Sign In</button>
-                </form>
-                  <!-- still needs image -->
-                  <img src="assets/imgs/google.png" alt="" class="connect-with-me-photo">
-                </div>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
        <!--====== HTML CONTENT ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand">Travel Smart</a>
@@ -78,7 +58,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="trending.html">Trending</a>
       </li>
       <li class="nav-item">
@@ -91,26 +71,8 @@
     </div>
     </nav>
     
-    <!-- Search Bar -->
-   <!--  <div class="wrap wrap-search">  
-        <div class="box">
-            <div class="login">
-                <div class="brand">
-                    <h1>Here We Go!<i class="fa fa-paper-plane"></i></h1>
-                </div>
-                <div class="inputs">
-                    <p>Where do you want to go?</p>
-                    <input id="where" type="text" class="input">
-                    <p>When do you want to get there?</p>
-                    <input id="when" type="text" class="input">
-                </div>
-                <div class="buttons">
-                    <button class="submit">Let's Go!</button>
-                </div>
-            </div>
-        </div>
-    </div> Search Bar Beta *Mark -->
-     <div class="wrap wrap-search">  
+        <!-- Search Bar -->
+    <div class="wrap wrap-search">  
         <div class="box">
             <div class="login">
                 <div class="brand">
@@ -120,7 +82,7 @@
                     <p>Point of Origin: </p>
                     <input id="origin" type="text" class="input autocomplete">
                     <p>Where are you going? </p>
-                    <input id="destination" type="text" class="input where autocomplete">
+                    <input id="where" type="text" class="input">
                     <p>When would you like to get there?: </p>
                     <input id="departureDate" type="text" class="input datepicker form-control" />
                 </div>
@@ -138,102 +100,41 @@
                     <div class="panel-heading text-center">
                         <div class="panel-title"></div>
                     </div>
-                    <div class="panel-body cityImage">  <!-- I changed this div because I wanted to add a go-back button  wenfang -->
-                        <img src="">
-                    </div>
+                    <div class="panel-body cityImage"></div>
                     <!-- Place holder for About City -->
-                    <!-- <div class="panel-body cityAbout">About City</div> -->
-                    <div class="panel-body popularSrches">   <!-- added a div for popular searches  wenfang -->
-                        <h2>Popular Destinations</h2>
-                        <hr>
-                    </div>
-               
-                    <!-- Place holder for the City weather data-->
-                    <div class="panel-body cityWeather">
-                        <div id="localTimeWeather">
-                        </div>
-                        <br>
-                        <table class="table table-hover" id='weather-table'>
-                           <thead>
-                              <tr>
-                                <th>Month</th>
-                                <th>Jan</th>
-                                <th>Feb</th>
-                                <th>Mar</th>
-                                <th>Apr</th>
-                                <th>May</th>
-                                <th>Jun</th>
-                                <th>Jul</th>
-                                <th>Aug</th>
-                                <th>Sep</th>
-                                <th>Oct</th>
-                                <th>Nov</th>
-                                <th>Dec</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                             <!--  <tr>
-                                <td>Avg. Min. Temp (F)</td>
-                              </tr>
-                              <tr>
-                                <td>Abs. Max. Temp (F)</td>
-                              </tr>
-                              <tr>
-                                <td>Avg. Daily Rainfall (in)</td>
-                              </tr> -->
-                           </tbody>
-                        </table>
-                    </div>
-                    
-                    <!-- <hr> -->
+                    <div class="panel-body cityAbout">About City</div>
+                    <hr>
                     <!-- Place holder for Things to Do -->
                     <!-- added a header for the things-to-do title - wenfang-->
                     <div class="panel-body cityToDo"><h2></h2></div>
                     <hr>
                     <!-- Place holder for Flight info -->
-                    <!-- <div class="panel-body cityFlight">Flight Info</div> -->
-                    <div class="panel-body cityFlight"><h2></h2></div>
-                      <!-- a header for flight info - wenfang-->
-                      <!-- Place holder for Flight info -->
                     <div class="panel-body cityFlight">Flight Info</div>
                     <table class="table tablesorter">  
-                    <thead class="thead">
-                    <tr>
-                    <th class="thead tablesorter">Origin</th>
-                    <th class="thead tablesorter">Destination</th>
-                    <th class="thead tablesorter">Departure</th>
-                    <th class="thead tablesorter">Return</th>
-                    <th class="thead tablesorter">Price</th>
-                    </tr>
-                    </thead>
+      <thead class="thead">
+        <tr>
+          <th class="thead tablesorter">Origin</th>
+          <th class="thead tablesorter">Destination</th>
+          <th class="thead tablesorter">Departure</th>
+          <th class="thead tablesorter">Return</th>
+          <th class="thead tablesorter">Price</th>
+        </tr>
+      </thead>
       <tbody >
         <tr class="tr" id="results">
-          <!-- Results imported jQuery == Mark  -->
+          <!-- Example Movie 1 -->
           <td class="td"><span id="origin" class="tablesorter"></span></td>
-          <td class="td"><span id="destination" class="tablesorter" value="0"></span></td>
+          <td class="td"><span id="destination" class="origin tablesorter" value="0"></span></td>
           <td class="td"><span id="departure_date" class="tablesorter"></span></td>
           <td class="td" id="td"><span id="return_date" class="tablesorter"></span></td>
           <td class="td" id="td"><span id="price" class="tablesorter"></span></td>
         </tr>
- 
- 
- 
- 
- 
- 
       </tbody>
     </table>
                 </div>
             </div>
         </div> 
-    <!--====== BOOTSTRAP ===== -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
 
-    <!-- Added Jquery UI Libraries wenfang -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -246,12 +147,13 @@
     <!--====== YOUR LOCAL JS FILE ===== -->
     <!-- link to user JS file. Name will change -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
 
 
     <script type="text/javascript">
 //     $(".date-picker").datepicker();
- 
+
 //     $(".date-picker").on("change", function () {
 //     var id = $(this).attr("id");
 //     var val = $("label[for='" + id + "']").text();
@@ -260,12 +162,10 @@
 //     console.log(this.date);
 //     $("#msg").text(val + " changed");
 // });
- 
+
 // MomentJS if wanted to automate departureDate
     var date = moment().add(1, 'days').format('YYYY-MM-DD');  
-    // var date = moment().format('YYYY-MM-DD');  // Today, in MomentJS - however to note, Amadeus doesn't allow promt searches with Inspiration. Must add +1 day to proceed. -- Mark
-    // var date = (date);  
- 
+
     var options = {
     minDate: new Date(2017, 0, 1, 12),
     maxDate: new Date(2070, 11, 31),
@@ -278,7 +178,7 @@
     beforeShow: function (inputEl, datepickerInst) {
         console.log("before show");
         //datepickerInst.input[0].value =  datepickerInst.selectedMonth + "/" + datepickerInst.selectedDay + "/" + datepickerInst.selectedYear;
- 
+
         console.log("selected Year/Month/Day", datepickerInst.selectedYear,
             "/", datepickerInst.selectedMonth,
             "/", datepickerInst.selectedDay);
@@ -288,45 +188,36 @@
         console.log("draw Year/Month/Day", datepickerInst.drawYear,
             "/", datepickerInst.drawMonth,
             "/", datepickerInst.drawDay);
- 
+
         console.log(datepickerInst);
         //datepickerInst.input[0].hidden = true;
- 
+
     },
     onClose: function(date, inst){
         console.log(date);
-        var date = (departureDate.value);
-        console.log(date);
-        console.log(departureDate.value);
-        // var date = (date);
         console.log(inst);
-
-
-
-
-        // var date = (date);
+        var date = (date);
         // inst.input[0].value=inst.selectedMonth + "/" + inst.selectedYear;
     }
- 
+
 };
- 
+
 $(".datepicker").datepicker(options);
- 
-    
- 
+
+
     
     // $("#departureDate").on("click" , function(event)) {
     // var date = (departureDate);
     //     console.log(date);
     // }
-    // var date = (date);
+    var date = (date);
     
     var apiKey = "p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY";
     // var origin = (ui.item.value);
     // console.log(ui.item.value);
     console.log(date);
     console.log(apiKey);
- 
+
             $(function() {
                 function log( message ) {
                     $( "<div>" ).text( message ).prependTo( "#log" );
@@ -348,10 +239,8 @@ console.log(data[0]);
 console.log(data[0].label);
 console.log(data[1]);
 console.log(log);
-console.log(log[0]);
-// console.log(where);
-// console.log(where.value);
- 
+console.log(where);
+
 }
 });
 },
@@ -360,7 +249,7 @@ select: function( event, ui ) {
 log( ui.item ?
 "Selected: " + ui.item.label :
 "Nothing selected, input was " + this.value);
- 
+
 console.log(ui.item.label); // this is the Full Airport Name with Identifier and Title
 // $("#where").value(ui.item.label);
 console.log(ui.item); // this is the Airport Object 
@@ -369,44 +258,36 @@ console.log(cityName);
 console.log(date);
 var origin = (ui.item.value);
 console.log(origin);
-// console.log(origin[0]);
-// console.log(origin[1]);
-var where = (where);
 
 
- 
- 
+
 $(".submit").on("click" , function(event) {
 $.ajax({
       url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&departure_date=" + date + "&apikey=" + apiKey,
 
-      // https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&departure_date=" + date + "&apikey=" + apiKey, // Working Inspiration Search 
- 
       // Low Fare Search, in progress. TODO: Date, and Departure City -- Mark 
-      // https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + date + "&apikey=" + apiKey, // 
- 
+      // https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + date + "T23:59&apikey=" + apiKey, // 
+
       // Inspiration search, // 
       // https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&destination=" + cityName + "&departure_date=" + date + "&apikey=" + apiKey, //
- 
+
       // working on a link which will pick up with Form results and insert at the right part of the API string ;)
       // url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + FormAnswer + "&apikey=p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY",
- 
+
       // // low fare query
-// http://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + departureDate + "&return_by=" + returnDate + "&apikey=" + apiKey, //
- 
+// http://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + departureDate + "&return_by=" + returnDate + "T23:59&apikey=" + apiKey, //
+
       method: "GET"
- 
+
       }).done(function(data) {
- 
+
 // creating an array with the data from the API
       Array['#origin'] = data['origin'];
-      console.log(data.origin);
-      console.log(origin);
       // Array['#outbound'] = data['outbound'];
       // Array['#flights'] = data['flights'];
       Array['#currency'] = data['currency'];
       Array['#results'] = data['results'];
- 
+
       Array['#departure_date'] = data['departure_date'];
       Array['#return_date'] = data['return_date'];
       Array['#price'] = data['price'];
@@ -415,12 +296,11 @@ $.ajax({
       Array['#destination'] = data['destination'];
       
     // array that needs to be sorted
- 
-      // $('#table').dataTable(data.Year);
-      // // $('#Rating').dataTable(data.Ratings[0].Value);
-      // $('#data').dataTable(data.Actors);
-      // $('#table').dataTable(data.Title);
- 
+
+      $('#table').dataTable(data.Year);
+      // $('#Rating').dataTable(data.Ratings[0].Value);
+      $('#data').dataTable(data.Actors);
+      $('#table').dataTable(data.Title);
       $('#departure_date').append("<br>" + data.results[0].departure_date);
       $('#departure_date').append("<br>" + data.results[1].departure_date);
       $('#departure_date').append("<br>" + data.results[2].departure_date);
@@ -455,8 +335,7 @@ $.ajax({
       $('#price').append("<br> $" + data.results[9].price);
       $('#price').append("<br> $" + data.results[10].price);
       $('#destination').append("<br>" + data.results[0].destination);
-      console.log(data.results[0].destination);
- 
+
     $('#destination').append("<br>" + data.results[1].destination);
     $('#destination').append("<br>" + data.results[2].destination);
     $('#destination').append("<br>" + data.results[3].destination);
@@ -467,10 +346,10 @@ $.ajax({
     $('#destination').append("<br>" + data.results[8].destination);
     $('#destination').append("<br>" + data.results[9].destination);
     $('#destination').append("<br>" + data.results[10].destination);
-      $('#origin').text("<br>" + origin);
-      $('#origin').html("<br>" + origin);
-      $('#origin').prepend("<br>" + origin);
-      $('#origin').append("<br>" + origin);
+      $('#origin').append("<br>" + data.origin);
+      $('#origin').append("<br>" + data.origin);
+      $('#origin').append("<br>" + data.origin);
+      $('#origin').append("<br>" + data.origin);
       $('#origin').append("<br>" + data.origin);
       $('#origin').append("<br>" + data.origin);
       $('#origin').append("<br>" + data.origin);
@@ -479,7 +358,7 @@ $.ajax({
       $('#origin').append("<br>" + data.origin);
       $('#origin').append("<br>" + data.origin);
       }); });
- 
+
 /* code to be executed after the ajax call */
 function callback(data){
   data.origin = origin;
@@ -488,10 +367,10 @@ function callback(data){
     // var data = (data);
     // data = data;
     // var Origin = (data.origin);
- 
+
 };
- 
- 
+
+
 // console.log(this.city);
 },
 open: function() {
@@ -503,6 +382,9 @@ $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
 });
 });
 </script>
+
+
+
 </body>
 
 </html>
