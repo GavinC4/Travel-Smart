@@ -167,7 +167,8 @@ img {
 display: block;
 max-width:400px;
 max-height:340px;
-width: auto;
+/*width: auto;*/
+width: 90%;
 height: auto;
 text-align: center;
 margin: auto;
@@ -182,7 +183,8 @@ color: white;
 }
 .panel {
 background-color: black;
-margin: 2% 20% 0% 20%;
+/*margin: 2% 20% 0% 20%;*/
+margin: 2% 18% 0% 18%;
 }
 .cityImage {
 height: 400px;
@@ -203,10 +205,11 @@ display: none;
 padding-top: 20px;
 margin-bottom: 20px;
 }
-.backbutton {
+.navbutton {    /*.backbutton {*/
 position: absolute;
 right: 15px;
 bottom: 0px;
+margin-bottom: 5px;
 }
 .date-form { margin: 10px; }
 label.control-label span { cursor: pointer; }
@@ -221,16 +224,29 @@ display: inline-block;
 margin-bottom: 5px;
 font-weight: 700;
 }
-<<<<<<< HEAD
-=======
+/*<<<<<<< HEAD
+=======*/
 
 .ui-autocomplete-loading {
 background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
 }
 #city { width: 25em; }
 
->>>>>>> fa43b14079aa9f2ba9d2ca304aba52954d6a44a9
+/*>>>>>>> fa43b14079aa9f2ba9d2ca304aba52954d6a44a9*/
+.cityToDo {    /*???*/
+	position: relative;
+}
+
 .cityWeather {
 display: none;
+}
+
+@media screen and (max-width: 1290px) {
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
 }
 

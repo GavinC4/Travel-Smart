@@ -43,12 +43,14 @@ database.ref("Posts").on("child_added", function(snap) {
 
 // autocomplete is not a function?
 $("#where").autocomplete({
+    source: cityOptions
+});
 
-            $(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
+            // $(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
 
-            $(".where").autocomplete({
-                source: cityOptions
-            });
+            // $(".where").autocomplete({
+            //     source: cityOptions
+            // });
 
             var int; //changed the interval variable scope to global  -- wenfang
             var srchResPage = false; //a flag for checking if current 'page' is search page or result page
@@ -63,7 +65,7 @@ $("#where").autocomplete({
                 srchResPage = true;
 
                 // take value from input name
-                var cityInput = $(".where").val().trim(); //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
+                var cityInput = $("#where").val().trim(); //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
                 var arr = cityInput.split(",");
                 cityName = arr[0];
                 console.log("cityName var is: " + cityName);
@@ -98,7 +100,7 @@ $("#where").autocomplete({
                     // set loop for X seconds
                     int = self.setInterval(changeImg, 1000 * 5);
                     //a back-to-search button added
-                    var backBtn = $("<button class='submit backbutton'>").text("Back to Search");
+                    var backBtn = $("<button class='submit navbutton' id='back'>").text("Back to Search");
                     $(".cityImage").append(backBtn);
 
                     // displays images in DOM and increments i
@@ -176,12 +178,21 @@ $("#where").autocomplete({
                     console.log("Errors handled: " + errorObject.code);
                 });
 
+                //a checkout-flight button added
+                var flightBtn = $("<button class='submit navbutton' id='chkflight'>").text("Plan Your Trip");
+                $(".cityToDo").append("<br><br>").append(flightBtn);
+
             }); /*added closing semicolons --- wenfang */
 
             //we need a button to go back to search
-            $(".cityImage").on("click", ".backbutton", function() {
+            $(".cityImage").on("click", "#back", function() {
                 location.reload();
-            })
+            });
+
+            $(".cityToDo").on("click", "#chkflight", function () {
+                clearInterval(int);
+                location.href = "beta.html";
+            });
 
             //fetch most-searched places to the front page
             var aRef = database.ref("Posts").orderByChild("srchCounter").limitToLast(3);
