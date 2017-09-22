@@ -11,6 +11,12 @@
  firebase.initializeApp(config);
 
  var database = firebase.database();
+ 
+// $(document).ready(function() {
+// //displays modal
+// $('#myModal').modal('show');
+
+// }; 
 
 var cityName = "";
 var imageArray = [];
@@ -34,6 +40,9 @@ database.ref("Posts").on("child_added", function(snap) {
 }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
+
+// autocomplete is not a function?
+$("#where").autocomplete({
 
 $(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
  
