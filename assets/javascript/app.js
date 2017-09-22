@@ -12,11 +12,11 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// $(document).ready(function() {
-// //displays modal
-// $('#myModal').modal('show');
+$(document).ready(function() {
+//displays modal
+$('#myModal').modal('show');
 
-// }; 
+}; 
 
 var cityName = "";
 var imageArray = [];
@@ -158,7 +158,6 @@ $("#where").autocomplete({
                 $(".popularSrches").empty();
                 $(".cityToDo h2").text("Things To Do in " + cityName);
                 $(".cityToDo").append("<hr>");
-                // database.ref("Posts").on("value", function(snapshot) {
                 database.ref("Posts").once("value", function(snapshot) {
                     if (snapshot.child(cityInput).exists()) {
                         var childRef = snapshot.ref.child(cityInput);
