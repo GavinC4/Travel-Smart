@@ -10,46 +10,7 @@ messagingSenderId: "244047018856"
 firebase.initializeApp(config);
 // Create a variable to reference the database.
 var database = firebase.database()
-// Capture Button Click
-$("#add-user").on("click", function(event) {
-// prevent page from refreshing when form tries to submit itself
-event.preventDefault();
-// Capture user inputs and store them into variables
-var firstName = $("#inputFname").val().trim();
-var lastName = $("#inputLname").val().trim();
-var userName = $("#username-input").val().trim();
-var email = $("#inputEmail").val().trim();
-var password = $("#password-input").val().trim();
-// Console log each of the user inputs to confirm we are receiving them
-console.log(firstName, lastName, userName, email, password);
-// push user info to database
-if ((firstName == "") || (lastName == "") || (userName == "") || (email == "") || (password == "")) {
-setError();
-} else {
-database.ref().push({
-firstName: firstName,
-lastName: lastName,
-userName: userName,
-email: email,
-password: password,
-created: firebase.database.ServerValue.TIMESTAMP,
-modified: firebase.database.ServerValue.TIMESTAMP
-});
-}
-$('input').val("");
-// for sign in authentication
-firebase.auth().signInWithCustomToken(token).catch(function(error) {
-// Handle Errors here.
-var errorCode = error.code;
-var errorMessage = error.message;
-// ...
-});
-firebase.auth().signOut().then(function() {
-// Sign-out successful.
-}).catch(function(error) {
-// An error happened.
-});
-});
+
 // Load the SDK asynchronously
 (function(thisdocument, scriptelement, id) {
 var js, fjs = thisdocument.getElementsByTagName(scriptelement)[0];
@@ -98,3 +59,43 @@ document.getElementById("inputUname").value = response.user_name;
 document.getElementById("inputEmail").value = response.email;
 });
 }
+// Capture Button Click
+$("#add-user").on("click", function(event) {
+// prevent page from refreshing when form tries to submit itself
+event.preventDefault();
+// Capture user inputs and store them into variables
+var firstName = $("#inputFname").val().trim();
+var lastName = $("#inputLname").val().trim();
+var userName = $("#username-input").val().trim();
+var email = $("#inputEmail").val().trim();
+var password = $("#password-input").val().trim();
+// Console log each of the user inputs to confirm we are receiving them
+console.log(firstName, lastName, userName, email, password);
+// push user info to database
+if ((firstName == "") || (lastName == "") || (userName == "") || (email == "") || (password == "")) {
+setError();
+} else {
+database.ref().push({
+firstName: firstName,
+lastName: lastName,
+userName: userName,
+email: email,
+password: password,
+created: firebase.database.ServerValue.TIMESTAMP,
+modified: firebase.database.ServerValue.TIMESTAMP
+});
+}
+$('input').val("");
+// for sign in authentication
+firebase.auth().signInWithCustomToken(token).catch(function(error) {
+// Handle Errors here.
+var errorCode = error.code;
+var errorMessage = error.message;
+// ...
+});
+firebase.auth().signOut().then(function() {
+// Sign-out successful.
+}).catch(function(error) {
+// An error happened.
+});
+});
