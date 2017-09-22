@@ -37,7 +37,10 @@
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
+
+    <!--Datatables CSS - Mark -->
+    <link rel="stylesheet" href="assets/css/datatables.css"> <!-- ??? -->
+
 </head>
 <body>
     <!-- Starting Modal -->
@@ -58,11 +61,11 @@
                   <input type="password" id="password_input" name="user_password" />
                 </div>
                 <button class="submit-btn">Sign In</button>
-                </form>
+                <!-- </form> ???-->
                   <!-- still needs image -->
                   <img src="assets/imgs/fb.png" alt="" class="connect-fb-photo">
                 </div>
-              </div>
+              <!-- </div> ???-->
             </div>
             <!-- /.modal-content -->
         </div>
@@ -99,6 +102,11 @@
                 </div>
                 <div class="inputs">
                     <p>Where do you want to go?</p>
+
+                    <input id="where" type="text" class="input"> <!-- ???where"> -->
+                    <!-- <p>When do you want to get there?</p>
+                    <input id="when" type="text" class="input"> -->
+
                     <input id="where" type="text" class="input">
                     <p>When do you want to get there?</p>
                     <input id="when" type="text" class="input">
@@ -122,6 +130,7 @@
                     <input id="destination" type="text" class="input where autocomplete">
                     <p>When would you like to get there?: </p>
                     <input id="departureDate" type="text" class="input datepicker form-control" />
+
                 </div>
                 <div class="buttons">
                     <button class="submit">Let's Go!</button>
@@ -152,7 +161,7 @@
                         <div id="localTimeWeather">
                         </div>
                         <br>
-                        <table class="table table-hover" id='weather-table'>
+                        <table class="table table-hover table-responsive" id='weather-table'>
                            <thead>
                               <tr>
                                 <th>Month</th>
@@ -188,7 +197,7 @@
                     <!-- Place holder for Things to Do -->
                     <!-- added a header for the things-to-do title - wenfang-->
                     <div class="panel-body cityToDo"><h2></h2></div>
-                    <hr>
+                    <!-- <hr> -->
                     <!-- Place holder for Flight info -->
                     <!-- <div class="panel-body cityFlight">Flight Info</div> -->
                     <div class="panel-body cityFlight"><h2></h2></div>
