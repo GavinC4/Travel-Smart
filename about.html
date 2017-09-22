@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Travel Smart</title>
+    <title>Travel Smart
+    </title>
     <!--Link to reset css template -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--====== BOOTSTRAP ===== -->
@@ -13,196 +13,199 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- ===== FIREBASE ====== -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
+    </script>
     <!--====== FONTS ===== -->
     <!--Import Google Icon Font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
     <!-- Font Awesome link which enable fonts and icons.  -->
-    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+    <script src="https://use.fontawesome.com/9763ef17ba.js">
+    </script>
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">    
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    
-</head>
-<body>
-<style>
-.jumbotron {
-    color: white;
-
-}
-.media-body {
-    color: white;
-}
-h3 {
-    color: white;
-}
-h2 {
-    color: white;
-}
-/*.buttons {
-    position: relative;
-}*/
-</style>
-       <!--====== HTML CONTENT ===== -->
+    <link rel="stylesheet" type="text/css" href="assets/css/about.css">
+  </head>
+  <body>
+    <!--====== HTML CONTENT ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">Travel Smart</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="signup.html">Sign Up</a>
-      </li>
-    </ul>    
-    </div>
+      <a class="navbar-brand">Travel Smart
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="trending.html">Trending
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up
+            </a>
+          </li>
+        </ul>    
+      </div>
     </nav>
     <br>
     <br>
     <div class="about-wrap">
-            <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                        <h3 class="panel-title"><strong>About the Team</strong></h3>
-                    
-                    <br><br><div align="center" class="buttons">
-                    <button class="submit">Learn about the project!</button>
-                </div> <!-- // button -->
-            </div> <!-- // team panel -->
-<section class="ct_icon_box_section">
-      <div class="ct-section_header ct-section_header--type2">
-         <h2>
-            Bookings
-         </h2>
-         <div class="media-body ct-section_header-description">
-            Allow your users to book directly on your website with an intutive booking form using jQuery UI.
-         </div>
-         <div class="clearfix">
-            &nbsp;
-         </div>
-         <div class="ct-section_header-separator">
-            &nbsp;
-         </div>
-      </div>
-     <div class="row">
-         <div class="col-md-4 col-sm-6">
-            <div class="ct-icon_box media">
-               <div class="media-left">
-                  <i class="fa fa-plane" aria-hidden="true"></i>
-               </div>
-               <div class="media-body">
-                  <h3 class="media-heading">
-                     Flights
-                  </h3>
-                  <div class="media-body ct-icon_box-content">
-                     Get the lowest rates on air fare!
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="ct-icon_box media">
-               <div class="media-left">
-                  <i class="fa fa-building" aria-hidden="true"></i>
-               </div>
-               <div class="media-body">
-                  <h3 class="media-heading">
-                     Hotels
-                  </h3>
-                  <div class="ct-icon_box-content">
-                     Find the best hotels for the best price!
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="ct-icon_box media">
-               <div class="media-left">
-                  <i class="fa fa-car" aria-hidden="true"></i>
-               </div>
-               <div class="media-body">
-                  <h3 class="media-heading">
-                     Cars
-                  </h3>
-                  <div class="ct-icon_box-content">
-                     Choose any car on the planet to get you there!
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="ct-icon_box media">
-               <div class="media-left">
-                  <i class="fa fa-ship" aria-hidden="true"></i>
-               </div>
-               <div class="media-body">
-                  <h3 class="media-heading">
-                     Cruises
-                  </h3>
-                  <div class="ct-icon_box-content">
-                     Let the finest cruise lines get you to your destination!
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="ct-icon_box media">
-               <div class="media-left">
-                  <i class="fa fa-line-chart"></i>
-               </div>
-               <div class="media-body">
-                  <h3 class="media-heading">
-                     Vacation Rentals
-                  </h3>
-                  <div class="ct-icon_box-content">
-                    Book your own destination with vacation rentals.
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="ct-icon_box media">
-               <div class="media-left">
-                  <i class="fa fa-users" aria-hidden="true"></i>
-               </div>
-               <div class="media-body">
-                  <h3 class="media-heading">
-                     Bundle Deals
-                  </h3>
-                  <div class="ct-icon_box-content">
-                     Create your own vacation bundle and find big savings!
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-</section>
-                    <div class="panel-body">                        
-                    </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+              <h3 class="panel-title">
+                <strong>About the Team
+                </strong>
+              </h3>
+              <br>
+              <br>
+              <div align="center" class="buttons">
+                <button class="submit">Learn about the project!
+                </button>
+              </div> 
+              <!-- // button -->
+            </div> 
+            <!-- // team panel -->
+            <section class="ct_icon_box_section">
+              <div class="ct-section_header ct-section_header--type2">
+                <h2>
+                  Bookings
+                </h2>
+                <div class="media-body ct-section_header-description">
+                  Allow your users to book directly on your website with an intutive booking form using jQuery UI.
                 </div>
+                <div class="clearfix">
+                  &nbsp;
+                </div>
+                <div class="ct-section_header-separator">
+                  &nbsp;
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-6">
+                  <div class="ct-icon_box media">
+                    <div class="media-left">
+                      <i class="fa fa-plane" aria-hidden="true">
+                      </i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading">
+                        Flights
+                      </h3>
+                      <div class="media-body ct-icon_box-content">
+                        Get the lowest rates on air fare!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="ct-icon_box media">
+                    <div class="media-left">
+                      <i class="fa fa-building" aria-hidden="true">
+                      </i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading">
+                        Hotels
+                      </h3>
+                      <div class="ct-icon_box-content">
+                        Find the best hotels for the best price!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="ct-icon_box media">
+                    <div class="media-left">
+                      <i class="fa fa-car" aria-hidden="true">
+                      </i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading">
+                        Cars
+                      </h3>
+                      <div class="ct-icon_box-content">
+                        Choose any car on the planet to get you there!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="ct-icon_box media">
+                    <div class="media-left">
+                      <i class="fa fa-ship" aria-hidden="true">
+                      </i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading">
+                        Cruises
+                      </h3>
+                      <div class="ct-icon_box-content">
+                        Let the finest cruise lines get you to your destination!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="ct-icon_box media">
+                    <div class="media-left">
+                      <i class="fa fa-line-chart">
+                      </i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading">
+                        Vacation Rentals
+                      </h3>
+                      <div class="ct-icon_box-content">
+                        Book your own destination with vacation rentals.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="ct-icon_box media">
+                    <div class="media-left">
+                      <i class="fa fa-users" aria-hidden="true">
+                      </i>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading">
+                        Bundle Deals
+                      </h3>
+                      <div class="ct-icon_box-content">
+                        Create your own vacation bundle and find big savings!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="panel-body">                        
             </div>
+          </div>
         </div>
+      </div>
     </div>     
-   
     <!--====== YOUR LOCAL JS FILE ===== -->
-    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/app.js">
+    </script>
     <!--====== UNDERSCORE===== -->
     <!-- underscore JS library CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+    </script>
     <!-- ===== FIREBASE ====== -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
+    </script>
     <!--====== YOUR LOCAL JS FILE ===== -->
     <!-- link to user JS file. Name will change -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-    
-
-</body>
-
-</html>
+    <script type="text/javascript" src="assets/javascript/app.js">
+    </script>
+  </body>
+</html> 
