@@ -236,7 +236,10 @@ console.log("This is the var destination: " + destination);
         });
 });
 
-var tomorrow = moment().add(1, 'days').format('YYYY-MM-DD'); 
+
+
+    $(".submit").on("click", function() {
+      var tomorrow = moment().add(1, 'days').format('YYYY-MM-DD'); 
 
 //     $("#end-date").on("change", function (event, ui) {
 //     var id = $(this).attr("id");
@@ -400,8 +403,6 @@ function callback(data){
     // var Origin = (data.origin);
 
 };
-
-    $(".submit").on("click", function() {
       var date = moment().add(1, 'days').format('YYYY-MM-DD'); 
       console.log("this is the checkInDate" + date);
         // $(".cityToDo").hide();
