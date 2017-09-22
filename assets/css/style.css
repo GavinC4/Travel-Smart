@@ -77,6 +77,13 @@ justify-content: space-between;
 max-height: 400px;
 max-width: 500px;
 }
+.s-container{
+	margin-right: auto;
+	margin-left: auto;
+}
+.fb-btn {
+	margin-bottom: 10px;
+}
 .brand {
 position: relative;
 bottom: 10px;
