@@ -55,8 +55,8 @@
                 <div class="brand">
                     <h1>Plan Your Trip <i class="fa fa-paper-plane"></i></h1>
                 </div>
-   <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
-            <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id">
+<!--    <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
+            <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id"> -->
             <div class="form-group">
                <label for="lodging">Book Your Stay</label> 
                <select class="form-control" id="lodgingID" name="lodgingID" placeholder="All Lodging">
@@ -109,7 +109,7 @@
             <div class="buttons">
                <button name="Submit" class="submit btn btn-sm">Let's Go!</button>
             </div>
-         </form>
+<!--          </form> -->
             </div>
          </div>
       </div>
@@ -121,7 +121,52 @@
                     <div class="panel-heading text-center">
                         <div class="panel-title"></div>
                     </div>
-                    
+                                        <div class="panel-body cityImage">  <!-- I changed this div because I wanted to add a go-back button  wenfang -->
+                        <img src="">
+                    </div>
+                    <!-- Place holder for About City -->
+                    <!-- <div class="panel-body cityAbout">About City</div> -->
+                    <div class="panel-body popularSrches">   <!-- added a div for popular searches  wenfang -->
+                        <h2>Popular Destinations</h2>
+                        <hr>
+                    </div>
+               
+                    <!-- Place holder for the City weather data-->
+                    <div class="panel-body cityWeather">
+                        <div id="localTimeWeather">
+                        </div>
+                        <br>
+                        <table class="table table-hover" id='weather-table'>
+                           <thead>
+                              <tr>
+                                <th>Month</th>
+                                <th>Jan</th>
+                                <th>Feb</th>
+                                <th>Mar</th>
+                                <th>Apr</th>
+                                <th>May</th>
+                                <th>Jun</th>
+                                <th>Jul</th>
+                                <th>Aug</th>
+                                <th>Sep</th>
+                                <th>Oct</th>
+                                <th>Nov</th>
+                                <th>Dec</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                             <!--  <tr>
+                                <td>Avg. Min. Temp (F)</td>
+                              </tr>
+                              <tr>
+                                <td>Abs. Max. Temp (F)</td>
+                              </tr>
+                              <tr>
+                                <td>Avg. Daily Rainfall (in)</td>
+                              </tr> -->
+                           </tbody>
+                        </table>
+                    </div>
                     <hr>
                       <!-- a header for flight info - wenfang-->
                       <!-- Place holder for Flight info -->

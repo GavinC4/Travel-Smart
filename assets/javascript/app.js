@@ -40,9 +40,12 @@ database.ref("Posts").on("child_added", function(snap) {
     console.log("Errors handled: " + errorObject.code);
 });
 
-// autocomplete is not a function? 
+$(".cityFlight").hide();
+// $(".form-group").hide();
+$(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
+ 
 $(".where").autocomplete({
-    source: cityOptions
+  source: cityOptions
 });
 
             // $(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
