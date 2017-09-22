@@ -38,8 +38,13 @@
             </a>
           </li>          
           <li class="nav-item">
+
             <!-- <a class="nav-link" href="trending.html">Trending</a> -->
             <a class="nav-link" href="beta.html">Plan</a>
+
+            <a class="nav-link" href="trending.html">Trending
+            </a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About
@@ -57,101 +62,100 @@
     <!-- Start of content wrap -->
     <!-- Start of Sign Up Area -->
     <div class="wrap">
-      <div class="container">
+      <div class="container s-container">
         <section class="row">
-          <div class="col-md-8 up-wrap">
-            <form class="sign-up-form">
-              <h1 class="sign-up-header">Sign Up
-              </h1>
-              <hr class="sign-up-hr"/>
-              <div class="form-group">
-                <label class="label-firstName" for="name">First Name
-                </label>
-                <br>
-                <input type="text" id="firstname_input" name="user_name" />
+          <div class="s-container col-md-8 up-wrap"> 
+            <form class="form-signin" role="form">
+              <div id="status">
               </div>
-              <div class="form-group">
-                <label class="label-lastName" for="name">Last Name
-                </label>
-                <br>
-                <input type="text" id="lastname_input" name="user_name" />
-              </div>
-              <div class="form-group">
-                <label class="label-userName" for="name">User Name
-                </label>
-                <br>
-                <input type="text" id="username_input" name="user_name" />
-              </div>
-              <div class="form-group">
-                <label class="label-email" for="mail">E-mail
-                </label>
-                <br>
-                <input type="email" id="email_input" name="user_email" />
-              </div>
-              <div class="form-group">
-                <label class="label-password" for="name">Password
-                </label>
-                <br>
-                <input type="text" id="password_input" name="user_password" />
-              </div>                          
-              <button class="submit-btn" id="add-user">Submit
-              </button>
+              <h2 class="form-signin-heading">User Registration
+              </h2>
               <br>
+              <label for="inputFname" class="sr-only">First Name
+              </label>
+              <input type="text" id="inputFname" class="form-control" placeholder="First Name" required autofocus>
+              <br>
+              <label for="inputLname" class="sr-only">Last Name
+              </label>
+              <input type="text" id="inputLname" class="form-control" placeholder="Last Name" required >
+              <br>
+              <label for="inputUname" class="sr-only">User Name
+              </label>
+              <input type="text" id="inputUname" class="form-control" placeholder="User Name" required >
+              <br>
+              <label for="inputEmail" class="sr-only">Email address
+              </label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required >
+              <br>
+              <label for="inputPassword" class="sr-only">Password
+              </label>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <br>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label>
+              </div>
+              <br>
+              <button class="btn btn-sm btn-primary btn-block" type="submit">Sign Up
+              </button> 
+              <button class="btn btn-sm btn-primary btn-block fb-btn" onclick="_login();" type="submit">Sign Up using Facebook
+              </button>
             </form>            
           </div>
-          <div class="col-md-4 in-wrap">
-            <!-- End of Sign Up Area -->
-            <!-- Start of Sign In Area -->
-            <section id="sign-in-area">
-              <div class="sign-in-content">
-                <form class="sign-in-form">
-                  <h1 class="sign-in-header">Sign in
-                  </h1>
-                  <hr class="sign-in-hr"/>
-                  <div>
-                    <div class="form-group">
-                      <label class="userName" for="name">User Name
-                      </label>
-                      <br>
-                      <input type="text" id="username_login" name="user_name" />
-                    </div>
-                    <div class="form-group">
-                      <label class="password" for="mail">Password
-                      </label>
-                      <br>
-                      <input type="password" id="password_login" name="user_password" />
-                    </div>
-                    <button class="submit-btn" id="sign-in">Sign In
-                    </button>
-                    </form>
-                  <!-- still needs image -->
-                  <img src="assets/imgs/google.png" alt="" class="connect-with-me-photo">
-                  </div>
-              </div>
-            </section>
-            <!-- End of Sign In Area -->
-          </div>
+          <!-- <div class="col-md-4 in-wrap"> -->
+          <!-- End of Sign Up Area -->
+          <!-- Start of Sign In Area -->
+          <!-- <section id="sign-in-area">
+<div class="sign-in-content">
+<form class="sign-in-form">
+<h1 class="sign-in-header">Sign in
+</h1>
+<hr class="sign-in-hr"/>
+<div>
+<div class="form-group">
+<label class="userName" for="name">User Name
+</label>
+<br>
+<input type="text" id="username_login" name="user_name" />
+</div>
+<div class="form-group">
+<label class="password" for="mail">Password
+</label>
+<br>
+<input type="password" id="password_login" name="user_password" />
+</div>
+<button class="submit-btn" id="sign-in">Sign In
+</button>
+</form>
+<!- still needs image -->
+          <!-- <img src="assets/imgs/google.png" alt="" class="connect-with-me-photo">
+</div> -->
+          <!-- </div> -->
         </section>
-      </div>
+        <!-- End of Sign In Area -->
+      </div> -->
+      </section>
     </div>
-    <!-- End of content wrap -->
-    <!--====== BOOTSTRAP ===== -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-    </script>
-    <!--====== UNDERSCORE===== -->
-    <!-- underscore JS library CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
-    </script>
-    <!-- ===== FIREBASE ====== -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
-    </script>
-    <!--====== YOUR LOCAL JS FILE ===== -->
-    <!-- link to user JS file. Name will change -->
-    <script type="text/javascript" src="assets/javascript/signup.js">
-    </script>
-  </body>
+  </div>
+<!-- End of content wrap -->
+<!--====== BOOTSTRAP ===== -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+</script>
+<!--====== UNDERSCORE===== -->
+<!-- underscore JS library CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
+</script>
+<!-- ===== FIREBASE ====== -->
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js">
+</script>
+<!--====== YOUR LOCAL JS FILE ===== -->
+<!-- link to user JS file. Name will change -->
+<script type="text/javascript" src="assets/javascript/signup.js">
+</script>
+</body>
 </html>
