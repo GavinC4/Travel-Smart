@@ -27,6 +27,10 @@ color: black;
 }
 .about-wrap {
 }
+.u-opt {
+	float:right;
+	margin-left:auto;
+}
 .box {
 position: relative;
 height: 65vh;

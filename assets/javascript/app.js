@@ -192,3 +192,8 @@ $("#where").autocomplete({
                 if (!srchResPage)
                     $(".popularSrches").append(destHead, destDescription);
             });
+            $(document).ready(function() {
+// //displays modal
+// $('#myModal').modal('show');
+
+};
