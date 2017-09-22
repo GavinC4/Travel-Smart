@@ -48,6 +48,12 @@ $(".where").autocomplete({
   source: cityOptions
 });
 
+//             $.ajax({
+//             method: "GET",
+//             url: "amadeus.js",
+//             dataType: "script"
+// });
+
             // $(".container-fluid").hide(); // Mark addded conatiner-fluid hide to stop text runnoff
 
             // $(".where").autocomplete({
@@ -59,6 +65,7 @@ $(".where").autocomplete({
 
             // on click function
             $(".submit").on("click", function(event) {
+
                 event.preventDefault();
                 $(".container-fluid").show(); // Mark added container-fluid show rule on submit
 
