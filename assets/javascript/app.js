@@ -120,8 +120,8 @@ $(".where").autocomplete({
                 $(".cityWeather").show();
                 $("#localTimeWeather").empty();
                 var wwoApiKey = 'ac4c2f19b48740fd9ce201023171209';
-                var weatherURL = "http://api.worldweatheronline.com/premium/v1/weather.ashx?q=" + cityName + "&format=json&key=" + wwoApiKey;
-                var tzURL = "http://api.worldweatheronline.com/premium/v1/tz.ashx?q=" + cityName + "&format=json&key=" + wwoApiKey;
+                var weatherURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?q=" + cityName + "&format=json&key=" + wwoApiKey;
+                var tzURL = "https://api.worldweatheronline.com/premium/v1/tz.ashx?q=" + cityName + "&format=json&key=" + wwoApiKey;
                 $.ajax({
                     url: tzURL,
                     method: "GET"
