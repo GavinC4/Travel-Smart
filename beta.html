@@ -34,90 +34,15 @@
     <!-- MomenJS CDN | Mark-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
    
+    <script src="assets/javascript/datesJS.js">
+    // Mark added this code to pickup the dates of checkIn and checkOut
+    </script>
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
     <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">  -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
 </head>
-<script>
-
-function setCookie(cname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var origin = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    var origin=getCookie("originname");
-    if (origin != "") {
-        alert("Your origin is " + origin);
-    } else {
-       // origin = prompt("Please enter your origin:","");
-       origin = $(origin);
-       if (origin != "" && origin != null) {
-           setCookie("originname", origin, 30);
-       }
-    }
-}
-
-</script>
-<script>
-
-function setCookie(dname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var destination = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    var destination=getCookie("destinationname");
-    if (destination != "") {
-        alert("Your destination is " + destination);
-    } else {
-       // destination = prompt("Please enter your destination:","");
-       destination = $(destination);
-       if (destination != "" && destination != null) {
-           setCookie("destinationname", destination, 30);
-       }
-    }
-}
-
-</script>
 
     <!--====== HTML CONTENT ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -128,7 +53,7 @@ function checkCookie() {
         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="trending.html">Trending</a>
+        <a class="nav-link" href="beta.html">Plan</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">About</a>
@@ -140,15 +65,12 @@ function checkCookie() {
     </div>
     </nav>
 
-<script src="assets/javascript/datesJS.js">
-// Mark added this code to pickup the dates of checkIn and checkOut
-</script>
 
 <div class="wrap wrap-search">  
 <div class="box">
             <div class="login">
                 <div class="brand">
-                    <h1>Here We Go!<i class="fa fa-paper-plane"></i></h1>
+                    <h1>Plan Your Trip <i class="fa fa-paper-plane"></i></h1>
                 </div>
    <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
             <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id">
@@ -216,57 +138,7 @@ function checkCookie() {
                     <div class="panel-heading text-center">
                         <div class="panel-title"></div>
                     </div>
-                    <div class="panel-body cityImage">  <!-- I changed this div because I wanted to add a go-back button  wenfang -->
-                        <img src="">
-                    </div>
-                    <!-- Place holder for About City -->
-                    <!-- <div class="panel-body cityAbout">About City</div> -->
-                    <div class="panel-body popularSrches">   <!-- added a div for popular searches  wenfang -->
-                        <h2>Popular Destinations</h2>
-                        <hr>
-                    </div>
-               
-                    <!-- Place holder for the City weather data-->
-                    <div class="panel-body cityWeather">
-                        <div id="localTimeWeather">
-                        </div>
-                        <br>
-                        <table class="table table-hover" id='weather-table'>
-                           <thead>
-                              <tr>
-                                <th>Month</th>
-                                <th>Jan</th>
-                                <th>Feb</th>
-                                <th>Mar</th>
-                                <th>Apr</th>
-                                <th>May</th>
-                                <th>Jun</th>
-                                <th>Jul</th>
-                                <th>Aug</th>
-                                <th>Sep</th>
-                                <th>Oct</th>
-                                <th>Nov</th>
-                                <th>Dec</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                             <!--  <tr>
-                                <td>Avg. Min. Temp (F)</td>
-                              </tr>
-                              <tr>
-                                <td>Abs. Max. Temp (F)</td>
-                              </tr>
-                              <tr>
-                                <td>Avg. Daily Rainfall (in)</td>
-                              </tr> -->
-                           </tbody>
-                        </table>
-                    </div>
                     
-                    <!-- <hr> -->
-                    <!-- Place holder for Things to Do -->
-                    <!-- added a header for the things-to-do title - wenfang-->
-                    <div class="panel-body cityToDo"><h2></h2></div>
                     <hr>
                     <!-- Place holder for Flight info -->
                     <!-- <div class="panel-body cityFlight">Flight Info</div> -->
@@ -275,30 +147,26 @@ function checkCookie() {
                       <!-- Place holder for Flight info -->
                     <div class="panel-body cityFlight">Flight Info</div>
                     <table class="table tablesorter">  
-                    <thead class="thead">
-                    <tr>
-                    <th class="thead tablesorter">Origin</th>
-                    <th class="thead tablesorter">Destination</th>
-                    <th class="thead tablesorter">Departure</th>
-                    <th class="thead tablesorter">Return</th>
-                    <th class="thead tablesorter">Price</th>
-                    </tr>
-                    </thead>
+        <thead class="thead">
+        <tr>
+          <th class="thead tablesorter">Origin</th>
+          <th class="thead tablesorter">Destination</th>
+          <th class="thead tablesorter">Departure</th>
+          <th class="thead tablesorter">Return</th>
+          <th class="thead tablesorter">Price</th>
+        </tr>
+      </thead>
       <tbody >
         <tr class="tr" id="results">
-          <!-- Results imported jQuery == Mark  -->
+          <!-- Example Movie 1 -->
           <td class="td"><span id="origin" class="tablesorter"></span></td>
-          <td class="td"><span id="destination" class="tablesorter" value="0"></span></td>
+          <td class="td"><span id="destination" class="origin tablesorter" value="0"></span></td>
           <td class="td"><span id="departure_date" class="tablesorter"></span></td>
           <td class="td" id="td"><span id="return_date" class="tablesorter"></span></td>
           <td class="td" id="td"><span id="price" class="tablesorter"></span></td>
-        </tr>
- 
- 
- 
- 
- 
- 
+
+
+            </tr>
       </tbody>
     </table>
                 </div>
@@ -317,289 +185,6 @@ function checkCookie() {
     <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
     <!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script> -->
 
-<script type="text/javascript">
-//     $(".date-picker").datepicker();
- 
-//     $(".date-picker").on("change", function () {
-//     var id = $(this).attr("id");
-//     var val = $("label[for='" + id + "']").text();
-//     console.log(val);
-//     console.log(id);
-//     console.log(this.date);
-//     $("#msg").text(val + " changed");
-// });
- 
-// MomentJS if wanted to automate departureDate
-    // var date = (date); 
-    // var date = moment().format('YYYY-MM-DD');  // Today, in MomentJS - however to note, Amadeus doesn't allow promt searches with Inspiration. Must add +1 day to proceed. -- Mark
-    // var date = (date);  
- 
-//     var options = {
-//     minDate: new Date(2017, 0, 1, 12),
-//     maxDate: new Date(2070, 11, 31),
-//     dateFormat: "yy/mm/dd",
-//     changeMonth: true,
-//     changeYear: true,
-//     gotoCurrent:false,
-//     // dateFormat: "m/d/yy"
-//     // dateFormat: "yyyy/mm/dd",
-//     beforeShow: function (inputEl, datepickerInst) {
-//         console.log("before show");
-//         //datepickerInst.input[0].value =  datepickerInst.selectedMonth + "/" + datepickerInst.selectedDay + "/" + datepickerInst.selectedYear;
- 
-//         console.log("selected Year/Month/Day", datepickerInst.selectedYear,
-//             "/", datepickerInst.selectedMonth,
-//             "/", datepickerInst.selectedDay);
-//         console.log("current Year/Month/Day", datepickerInst.currentYear,
-//             "/", datepickerInst.currentMonth,
-//             "/", datepickerInst.currentDay);
-//         console.log("draw Year/Month/Day", datepickerInst.drawYear,
-//             "/", datepickerInst.drawMonth,
-//             "/", datepickerInst.drawDay);
- 
-//         console.log(datepickerInst);
-//         //datepickerInst.input[0].hidden = true;
- 
-//     },
-//     onClose: function(date, inst){
-//         console.log(date);
-//         var date = (departureDate.value);
-//         console.log(date);
-//         console.log(departureDate.value);
-//         // var date = (date);
-//         console.log(inst);
-
-
-
-
-//         // var date = (date);
-//         // inst.input[0].value=inst.selectedMonth + "/" + inst.selectedYear;
-//     }
- 
-// };
- 
-// $(".datepicker").datepicker(options);
- 
-    
- 
-    
-    // $("#departureDate").on("click" , function(event)) {
-    // var date = (departureDate);
-    //     console.log(date);
-    // }
-    // var date = (date);
-    // callback (checkIn);checkOut //
-    var apiKey = "p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY";
-    // var origin = (ui.item.value);
-    // console.log(ui.item.value);
-    // console.log(dates);
-    console.log(apiKey);
- 
-$(function() {
-   function log( message ) {
-      $( "<div>" ).text( message ).prependTo( "#log" );
-      $( "#log" ).scrollTop( 0 );
-}
-$( ".autocomplete" ).autocomplete({
-source: function( request, response ) {
-$.ajax({
-url: "https://api.sandbox.amadeus.com/v1.2/airports/autocomplete",
-dataType: "json",
-data: {
-apikey: "p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY",
-term: request.term
-},
-success: function( data ) {
-response( data );
-console.log(data);
-console.log(data[0]);
-console.log(data[0].label);
-console.log(data[1]);
-console.log(log);
-
-// console.log(where);
-// console.log(where.value);
- 
-}
-});
-},
-minLength: 3,
-select: function( event, ui ) {
-log( ui.item ?
-"Selected: " + ui.item.label :
-"Nothing selected, input was " + this.value);
- 
-console.log("This prints the ui.item.label: " + ui.item.label); // this is the Full Airport Name with Identifier and Title
-// $("#where").value(ui.item.label);
-console.log("This prints the ui.item: " + ui.item); // this is the Airport Object 
-console.log("This prints the ui.item.value: " + ui.item.value); // this is the Airport Identifier
-// console.log("This is the var cityName: " + cityName);
-// console.log(date);
-var origin = (ui.item.value);
-console.log("This is the var origin: " + origin);
-
-   // take value from input name
-        var originInput = $(".whereOrigin").val().trim();  //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
-        var arr = originInput.split(",");
-        origin2 = arr[0];
-        console.log("originInput var trim/split is: " + origin2);
-        origin = origin2;
-
-// var de = (ui.item.value);
-// var destination = document.getElementById("destination").value;
-// var destination = (ui.item.value);
-// take value from input name
-        var destinationInput = $(".where").val().trim();  //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
-        var arr = destinationInput.split(",");
-        destination2 = arr[0];
-        console.log("destinationInput var trim/split is: " + destination2);
-        destination = destination2;
-console.log("This is the var destination: " + destination);
-
-var departureDate = (departure_date);
-console.log("This is the departureDate: " + departureDate);
-
-var returnDate = (return_date);
-console.log("This is the returnDate: " + returnDate);
-
-// }
-// }),
-// console.log(origin[0]);
-// console.log(origin[1]);
-// var where = ("This is the var where: " + where);
-
-
- 
- 
-$(".submit").on("click" , function(event) {
-$.ajax({
-      url: "https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + cityName + "&departure_date=" + departureDate + "&apikey=" + apiKey,
-
-      // https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&departure_date=" + date + "&apikey=" + apiKey, // Working Inspiration Search 
- 
-      // Low Fare Search, in progress. TODO: Date, and Departure City -- Mark 
-      // https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + date + "&apikey=" + apiKey, // 
- 
-      // Inspiration search, // 
-      // https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&destination=" + cityName + "&departure_date=" + date + "&apikey=" + apiKey, //
- 
-      // working on a link which will pick up with Form results and insert at the right part of the API string ;)
-      // url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + FormAnswer + "&apikey=p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY",
- 
-      // // low fare query
-// http://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + destination + "&departure_date=" + departureDate + "&return_by=" + returnDate + "&apikey=" + apiKey, //
- 
-      method: "GET"
- 
-      }).done(function(data) {
- 
-// creating an array with the data from the API
-      Array['#results'] = data['results'];
-      Array['#origin'] = data['origin'];
-      // console.log(data.origin);
-      $('#origin').append("<br>" + origin);
-      $('#origin').append("<br>" + origin);
-      $('#origin').append("<br>" + origin);
-      $('#origin').append("<br>" + origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      $('#origin').append("<br>" + data.origin);
-      console.log(origin);
-      console.log(results);
-      // console.log(results);
-      // Array['#outbound'] = data['outbound'];
-      // Array['#flights'] = data['flights'];
-      Array['#currency'] = data['currency'];
-      
- 
-      Array['#departure_date'] = data['departure_date'];
-      Array['#return_date'] = data['return_date'];
-      Array['#price'] = data['price'];
-      Array['#airport'] = data['airport'];
-      Array['#terminal'] = data['terminal'];
-      Array['#destination'] = data['destination'];
-      
-    // array that needs to be sorted
- 
-      // $('#table').dataTable(data.Year);
-      // // $('#Rating').dataTable(data.Ratings[0].Value);
-      // $('#data').dataTable(data.Actors);
-      // $('#table').dataTable(data.Title);
- 
-      $('#departure_date').append("<br>" + data.results[0].departure_date);
-      $('#departure_date').append("<br>" + data.results[1].departure_date);
-      $('#departure_date').append("<br>" + data.results[2].departure_date);
-      $('#departure_date').append("<br>" + data.results[3].departure_date);
-      $('#departure_date').append("<br>" + data.results[4].departure_date);
-      $('#departure_date').append("<br>" + data.results[5].departure_date);
-      $('#departure_date').append("<br>" + data.results[6].departure_date);
-      $('#departure_date').append("<br>" + data.results[7].departure_date);
-      $('#departure_date').append("<br>" + data.results[8].departure_date);
-      $('#departure_date').append("<br>" + data.results[9].departure_date);
-      $('#departure_date').append("<br>" + data.results[10].departure_date);
-      $('#return_date').append("<br>" + data.results[0].return_date);
-      $('#return_date').append("<br>" + data.results[1].return_date);
-      $('#return_date').append("<br>" + data.results[2].return_date);
-      $('#return_date').append("<br>" + data.results[3].return_date);
-      $('#return_date').append("<br>" + data.results[4].return_date);
-      $('#return_date').append("<br>" + data.results[5].return_date);
-      $('#return_date').append("<br>" + data.results[6].return_date);
-      $('#return_date').append("<br>" + data.results[7].return_date);
-      $('#return_date').append("<br>" + data.results[8].return_date);
-      $('#return_date').append("<br>" + data.results[9].return_date);
-      $('#return_date').append("<br>" + data.results[10].return_date);
-      $('#price').append("<br> $" + data.results[0].price);
-      $('#price').append("<br> $" + data.results[1].price);
-      $('#price').append("<br> $" + data.results[2].price);
-      $('#price').append("<br> $" + data.results[3].price);
-      $('#price').append("<br> $" + data.results[4].price);
-      $('#price').append("<br> $" + data.results[5].price);
-      $('#price').append("<br> $" + data.results[6].price);
-      $('#price').append("<br> $" + data.results[7].price);
-      $('#price').append("<br> $" + data.results[8].price);
-      $('#price').append("<br> $" + data.results[9].price);
-      $('#price').append("<br> $" + data.results[10].price);
-      $('#destination').append("<br>" + data.results[0].destination);
- 
-    $('#destination').append("<br>" + data.results[1].destination);
-    $('#destination').append("<br>" + data.results[2].destination);
-    $('#destination').append("<br>" + data.results[3].destination);
-    $('#destination').append("<br>" + data.results[4].destination);
-    $('#destination').append("<br>" + data.results[5].destination);
-    $('#destination').append("<br>" + data.results[6].destination);
-    $('#destination').append("<br>" + data.results[7].destination);
-    $('#destination').append("<br>" + data.results[8].destination);
-    $('#destination').append("<br>" + data.results[9].destination);
-    $('#destination').append("<br>" + data.results[10].destination);
-
-      }); });
- 
-/* code to be executed after the ajax call */
-function callback(data){
-  data.origin = origin;
-  console.log(data.origin);
-  console.log(origin);
-    // var data = (data);
-    // data = data;
-    // var Origin = (data.origin);
- 
-};
- 
- 
-// console.log(this.city);
-},
-open: function() {
-$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-},
-close: function() {
-$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-}
-});
-});
-</script>
+    <script src="assets/javascript/amadeus.js"></script>
 </body>
 </html>
