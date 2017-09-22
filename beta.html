@@ -28,11 +28,6 @@
     <!-- Added Jquery UI Libraries wenfang -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <!-- JS Libraries | Mark  -->
-    <!-- DatatablesJS | Mark -->
-    <script src="assets/javascript/datatables.js"></script>
-    <!-- MomenJS CDN | Mark-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
    
     <!--====== YOUR STYLE SHEET ===== -->
     <!-- Your style sheet link -->    
@@ -40,84 +35,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
 </head>
-<script>
-
-function setCookie(cname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var origin = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    var origin=getCookie("originname");
-    if (origin != "") {
-        alert("Your origin is " + origin);
-    } else {
-       // origin = prompt("Please enter your origin:","");
-       origin = $(origin);
-       if (origin != "" && origin != null) {
-           setCookie("originname", origin, 30);
-       }
-    }
-}
-
-</script>
-<script>
-
-function setCookie(dname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var destination = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    var destination=getCookie("destinationname");
-    if (destination != "") {
-        alert("Your destination is " + destination);
-    } else {
-       // destination = prompt("Please enter your destination:","");
-       destination = $(destination);
-       if (destination != "" && destination != null) {
-           setCookie("destinationname", destination, 30);
-       }
-    }
-}
-
-</script>
 
     <!--====== HTML CONTENT ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -128,7 +45,7 @@ function checkCookie() {
         <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="trending.html">Trending</a>
+        <a class="nav-link" href="beta.html">Plan</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">About</a>
@@ -140,15 +57,12 @@ function checkCookie() {
     </div>
     </nav>
 
-<script src="assets/javascript/datesJS.js">
-// Mark added this code to pickup the dates of checkIn and checkOut
-</script>
 
 <div class="wrap wrap-search">  
 <div class="box">
             <div class="login">
                 <div class="brand">
-                    <h1>Here We Go!<i class="fa fa-paper-plane"></i></h1>
+                    <h1>Plan Your Trip <i class="fa fa-paper-plane"></i></h1>
                 </div>
    <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
             <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id">
@@ -196,12 +110,12 @@ function checkCookie() {
             </div>
             <div class="form-group flights">
                <label for="destination">Where are you going? </label> 
-               <input id="destination" type="text" class="input where autocomplete">
+               <input id="destination" type="text" class="input whereDestination where autocomplete">
             </div>
             
                </div>
             <!--submit-->
-            <div class="buttons form-group">
+            <div class="buttons">
                <button name="Submit" class="submit btn btn-sm">Let's Go!</button>
             </div>
          </form>
@@ -216,105 +130,56 @@ function checkCookie() {
                     <div class="panel-heading text-center">
                         <div class="panel-title"></div>
                     </div>
-                    <div class="panel-body cityImage">  <!-- I changed this div because I wanted to add a go-back button  wenfang -->
-                        <img src="">
-                    </div>
-                    <!-- Place holder for About City -->
-                    <!-- <div class="panel-body cityAbout">About City</div> -->
-                    <div class="panel-body popularSrches">   <!-- added a div for popular searches  wenfang -->
-                        <h2>Popular Destinations</h2>
-                        <hr>
-                    </div>
-               
-                    <!-- Place holder for the City weather data-->
-                    <div class="panel-body cityWeather">
-                        <div id="localTimeWeather">
-                        </div>
-                        <br>
-                        <table class="table table-hover" id='weather-table'>
-                           <thead>
-                              <tr>
-                                <th>Month</th>
-                                <th>Jan</th>
-                                <th>Feb</th>
-                                <th>Mar</th>
-                                <th>Apr</th>
-                                <th>May</th>
-                                <th>Jun</th>
-                                <th>Jul</th>
-                                <th>Aug</th>
-                                <th>Sep</th>
-                                <th>Oct</th>
-                                <th>Nov</th>
-                                <th>Dec</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                             <!--  <tr>
-                                <td>Avg. Min. Temp (F)</td>
-                              </tr>
-                              <tr>
-                                <td>Abs. Max. Temp (F)</td>
-                              </tr>
-                              <tr>
-                                <td>Avg. Daily Rainfall (in)</td>
-                              </tr> -->
-                           </tbody>
-                        </table>
-                    </div>
                     
-                    <!-- <hr> -->
-                    <!-- Place holder for Things to Do -->
-                    <!-- added a header for the things-to-do title - wenfang-->
-                    <div class="panel-body cityToDo"><h2></h2></div>
                     <hr>
-                    <!-- Place holder for Flight info -->
-                    <!-- <div class="panel-body cityFlight">Flight Info</div> -->
-                    <div class="panel-body cityFlight"><h2></h2></div>
                       <!-- a header for flight info - wenfang-->
                       <!-- Place holder for Flight info -->
                     <div class="panel-body cityFlight">Flight Info</div>
                     <table class="table tablesorter">  
-                    <thead class="thead">
-                    <tr>
-                    <th class="thead tablesorter">Origin</th>
-                    <th class="thead tablesorter">Destination</th>
-                    <th class="thead tablesorter">Departure</th>
-                    <th class="thead tablesorter">Return</th>
-                    <th class="thead tablesorter">Price</th>
-                    </tr>
-                    </thead>
+        <thead class="thead">
+        <tr>
+          <th class="thead tablesorter">Origin</th>
+          <th class="thead tablesorter">Destination</th>
+          <th class="thead tablesorter">Departure</th>
+          <th class="thead tablesorter">Return</th>
+          <th class="thead tablesorter">Price</th>
+        </tr>
+      </thead>
       <tbody >
         <tr class="tr" id="results">
-          <!-- Results imported jQuery == Mark  -->
-          <td class="td"><span id="origin" class="tablesorter"></span></td>
-          <td class="td"><span id="destination" class="tablesorter" value="0"></span></td>
+          <!-- Example Movie 1 -->
+          <td class="td"><span id="origins" class="tablesorter"></span></td>
+          <td class="td"><span id="destinations" class="origin tablesorter" value="0"></span></td>
           <td class="td"><span id="departure_date" class="tablesorter"></span></td>
           <td class="td" id="td"><span id="return_date" class="tablesorter"></span></td>
           <td class="td" id="td"><span id="price" class="tablesorter"></span></td>
-        </tr>
- 
- 
- 
- 
- 
- 
+
+
+            </tr>
       </tbody>
     </table>
+                <div class="bottom"></div>
                 </div>
             </div>
         </div> 
+    </div> 
+
 
 
     <!--====== UNDERSCORE===== -->
     <!-- underscore JS library CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
+    <!-- JS Libraries | Mark  -->
+    <!-- DatatablesJS | Mark -->
+    <script src="assets/javascript/datatables.js"></script>
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 
     <!--====== YOUR LOCAL JS FILE ===== -->
     <!-- link to user JS file. Name will change -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 
+<<<<<<< HEAD
 <script type="text/javascript">
 
     var apiKey = "p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY";
@@ -529,5 +394,8 @@ $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
 });
 });
 </script>
+=======
+    <script src="assets/javascript/amadeus.js"></script>
+>>>>>>> fa43b14079aa9f2ba9d2ca304aba52954d6a44a9
 </body>
 </html>
