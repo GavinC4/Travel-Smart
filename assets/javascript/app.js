@@ -1,4 +1,9 @@
- /*added database contents --- wenfang */
+$(document).ready(function() {
+//displays modal
+$('#myModal').modal('show');
+
+});  
+/*added database contents --- wenfang */
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyD6f-EgnKwmX6Ff31ti0ObrYiCwAb1TNrI",
@@ -11,12 +16,6 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
-
-$(document).ready(function() {
-//displays modal
-$('#myModal').modal('show');
-
-}; 
 
 var cityName = "";
 var imageArray = [];
@@ -41,8 +40,8 @@ database.ref("Posts").on("child_added", function(snap) {
     console.log("Errors handled: " + errorObject.code);
 });
 
-// autocomplete is not a function?
-$("#where").autocomplete({
+// autocomplete is not a function? 
+$(".where").autocomplete({
     source: cityOptions
 });
 
@@ -65,7 +64,7 @@ $("#where").autocomplete({
                 srchResPage = true;
 
                 // take value from input name
-                var cityInput = $("#where").val().trim(); //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
+                var cityInput = $(".where").val().trim(); //To agree with the database, city input from the 'where' search box has the form 'New York City, United States' -- wenfang
                 var arr = cityInput.split(",");
                 cityName = arr[0];
                 console.log("cityName var is: " + cityName);
