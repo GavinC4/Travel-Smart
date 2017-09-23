@@ -239,6 +239,7 @@ console.log("This is the var destination: " + destination);
 
 
     $(".submit").on("click", function() {
+    // $( ".whereOrigin" ).change(function() {
       var tomorrow = moment().add(1, 'days').format('YYYY-MM-DD'); 
 
 //     $("#end-date").on("change", function (event, ui) {
@@ -403,6 +404,8 @@ console.log("This is the var destination: " + destination);
 //     // var Origin = (data.origin);
 
 // };
+
+
       var date = moment().add(1, 'days').format('YYYY-MM-DD'); 
       console.log("this is the checkInDate" + date);
         // $(".cityToDo").hide();
@@ -410,12 +413,16 @@ console.log("This is the var destination: " + destination);
         // $(".cityFlight").show(); // Mark added container-fluid show rule on submit
 $.ajax({
       url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + origin + "&departure_date=" + departure_date + "&apikey=" + apiKey,
+      timeout: 40000,
+      // retries       : 3,     //       <-------- Optional
+      // retryInterval : 3000,  
 
       // ToDo Low-Fare API Searchhttps://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=mia&departure_date=" + date + "&apikey=" + apiKey,: https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?origin=" + origin + "&destination=" + cityName + "&departure_date=" + tomorrow + "&apikey=" + apiKey,
 
       // working on a link which will pick up with Form results and insert at the right part of the API string ;)
       // url: "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?origin=" + FormAnswer + "&apikey=p8YSKZZKV403qdiG3zvO2jbw3pnEdPZY",
       method: "GET"
+
 
       }).done(function(data) {
 
