@@ -26,6 +26,62 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     
 </head>
+<style>
+  .box {
+position: relative;
+height: 70vh;
+min-height: 400px;
+width: 50vw;
+min-width: 350px;
+background-color: black;    
+/*background-size: auto;*/
+background-position: center;
+margin: auto;
+background-repeat: no-repeat;
+color: white;
+box-shadow: 5px 32px 61px 0px rgba(0,0,0,0.75);
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+padding: 30px 20px 30px 20px;
+-webkit-box-align: center;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-justify-content: space-around;
+-ms-flex-pack: distribute;
+justify-content: space-around;
+  }
+  .buttons {
+/*    position: relative;*/
+ 
+    position:absolute;
+    display: block;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    bottom: 65px;
+    margin-top: 80%;
+  }
+  .inputs {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 30px 20px 30px 20px;
+    background-position: center;
+    margin: auto;
+/*    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;*/
+  }
+</style>
 
     <!--====== HTML CONTENT ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,14 +106,15 @@
 
 
 <div class="wrap wrap-search">  
-<div class="box">
-            <div class="login">
-                <div class="brand">
-                    <h1>Plan Your Trip <i class="fa fa-paper-plane"></i></h1>
+<div class="box ">
+            <div class="login col-lg-12 col-xs-4 col-centered">
+                <div class="brand inputs col-lg-12 col-xs-4 col-centered">
+                    <h1>Plan Trip <i class="fa fa-paper-plane"></i></h1>
                 </div>
+               <!--  ToDo added form values for future updates with Hotels, Cars and more -->
 <!--    <form class="form book-now-form" role="form" id="widget_booking_form" name="widget_booking_form" >
             <input id="campaign" type="hidden" value="visitflagler_topNavWidget" name="campaign"> <input id="clone_id" type="hidden" value="278" name="clone_id"> -->
-            <div class="form-group">
+         <!--    <div class="form-group col-lg-8 col-xs-12 col-centered">
                <label for="lodging">Book Your Stay</label> 
                <select class="form-control" id="lodgingID" name="lodgingID" placeholder="All Lodging">
                   <option value="103" selected="selected">
@@ -75,18 +132,18 @@
                   <option value="5">
                      Train
                   </option>
-<!--                   <option value="7">
+                  <option value="7">
                      Other Vacation or Travel ToDo
                   </option> -->
                   <!-- <option value="7">
                      Bundle Deals ToDo coming soon 
                   </option> -->
-               </select>
-            </div>
+              <!--  </select>
+            </div>  -->
 
-                <div class="inputs">
+                <div class="inputs col-lg-12 col-xs-4 col-centered">
                 <!--check in element-->
-            <div class="form-group">
+            <div class="form-group ">
                <label for="check-in">Check In</label> <!-- <input type="textfield" class="form-control" id="check-in" placeholder="12.20.2014"> -->
                <input type="text"  class="form-control" id="start-date" name="checkIn" placeholder="yyyy/mm/dd">
             </div>
@@ -103,12 +160,12 @@
                <label for="destination">Where are you going? </label> 
                <input id="destination" type="text" class="input whereDestination where autocomplete">
             </div>
-            
-               </div>
-            <!--submit-->
-            <div class="buttons">
+             <!--submit-->
+            <div class="buttons inputs col-lg-12 col-xs-4 col-centered">
                <button name="Submit" class="submit btn btn-sm">Let's Go!</button>
             </div>
+               </div>
+           
 <!--          </form> -->
             </div>
          </div>
@@ -136,7 +193,7 @@
                         <div id="localTimeWeather">
                         </div>
                         <br>
-                        <table class="table table-hover" id='weather-table'>
+                        <table class="table table-hover table-responsive" id='weather-table'>
                            <thead>
                               <tr>
                                 <th>Month</th>
@@ -172,7 +229,7 @@
                       <!-- Place holder for Flight info -->
                     <div class="panel-body cityFlight">Flight Info</div>
                     <table class="table tablesorter">  
-        <thead class="thead">
+        <thead class="thead table-responsive">
         <tr>
           <th class="thead tablesorter">Origin</th>
           <th class="thead tablesorter">Destination</th>
@@ -181,8 +238,8 @@
           <th class="thead tablesorter">Price</th>
         </tr>
       </thead>
-      <tbody >
-        <tr class="tr" id="results">
+      <tbody class="table-responsive">
+        <tr class="tr table-responsive" id="results">
           <!-- Example Movie 1 -->
           <td class="td"><span id="origins" class="tablesorter"></span></td>
           <td class="td"><span id="destinations" class="origin tablesorter" value="0"></span></td>
