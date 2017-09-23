@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel Smart</title>
+    <!--Link to reset css template -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--====== BOOTSTRAP ===== -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <!--====== FONTS ===== -->
+    <!--Import Google Icon Font-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+    <!-- Font Awesome link which enable fonts and icons.  -->
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+   
+    <!--====== YOUR STYLE SHEET ===== -->
+    <!-- Your style sheet link -->    
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://www.amadeus.net/styles.d51be27c223e700b7299.bundle.css" rel="stylesheet"/></head>
+</head>
+
+
+<div _ngcontent-c4="" class="triptools-panel-container">
+        <router-outlet _ngcontent-c4=""></router-outlet><app-timetables _nghost-c5=""><div _ngcontent-c5="" id="triptool-timetables">
+  <div _ngcontent-c5="" class="triptools-panel-content timetables">
+    <div _ngcontent-c5="" class="triptools-panel-header-container">
+      <h2 _ngcontent-c5="" class="triptools-panel-header">
+        Timetables
+      </h2>
+      <h4 _ngcontent-c5="" class="triptools-panel-sub-header">
+        Here you can quickly check the schedules of all the flights for a particular journey.
+      </h4>
+    </div>
+    <div _ngcontent-c5="" class="triptool-container">
+      <div _ngcontent-c5="" class="triptool">
+        <div _ngcontent-c5="" class="triptool-content group">
+          <div _ngcontent-c5="" class="triptool-side-content">
+            <form _ngcontent-c5="" class="amadeus-form ng-untouched ng-dirty ng-valid" novalidate="">
+              <div _ngcontent-c5="" id="searchForm">
+                <div _ngcontent-c5="" class="search-flyout-flight-panel">
+                  <table _ngcontent-c5="">
+                    <tbody _ngcontent-c5=""><tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item from-location">
+                          <div _ngcontent-c5="" class="form-help">
+                            Origin:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <app-autocomplete _ngcontent-c5="" autocompletetype="airport" formcontrolname="origin" placeholder="City, airport or IATA" _nghost-c3="" class="ng-untouched ng-dirty ng-valid"><div class="ngui-auto-complete-wrapper" style="position: relative;"><input _ngcontent-c3="" autocomplete="off" min-chars="3" ngui-auto-complete="" type="text" class="anet-autocomplete ng-valid ng-dirty ng-touched" id="origin" tabindex="0" placeholder="City, airport or IATA"></div>
+</app-autocomplete>
+                          </div>
+                        </div>
+                      </td>
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item to-location">
+                          <div _ngcontent-c5="" class="form-help">
+                            Destination:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <app-autocomplete _ngcontent-c5="" autocompletetype="airport" formcontrolname="destination" placeholder="City, airport or IATA" _nghost-c3="" class="ng-untouched ng-dirty ng-valid"><div class="ngui-auto-complete-wrapper" style="position: relative;"><input _ngcontent-c3="" autocomplete="off" min-chars="3" ngui-auto-complete="" type="text" class="where anet-autocomplete ng-valid ng-dirty ng-touched" id="destination" tabindex="0" placeholder="City, airport or IATA"></div>
+</app-autocomplete>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item from-date date-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Departure Date:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            
+                            <p-calendar _ngcontent-c5="" dateformat="D dd M yy" formcontrolname="departureDate" placeholder="Departure" class="ng-tns-c6-0 ui-inputwrapper-filled ng-untouched ng-pristine ng-valid">
+        <span class="ng-tns-c6-0 ui-calendar">
+            <!---->
+                <input type="text" class="form-control ng-tns-c6-0 ui-inputtext ui-widget ui-state-default ui-corner-all" id="start-date" placeholder="Departure"><!---->
+            
+            <div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-shadow ng-trigger ng-trigger-overlayState" style="display: none; opacity: 0;">
+
+                <!---->
+                <!---->
+                <!---->
+                
+            </div>
+        </span>
+    </p-calendar>
+                          </div>
+                        </div>
+
+                      </td>
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Departure Time:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <select _ngcontent-c5="" class="amadeus-form-item small option-input ng-untouched ng-pristine ng-valid" formcontrolname="departureTime" id="departure-time" placeholder="Departure Time">
+                          <!----><option _ngcontent-c5="" value="0">Any</option><option _ngcontent-c5="" value="1">0 AM to 4 AM</option><option _ngcontent-c5="" value="2">4 AM to 8 AM</option><option _ngcontent-c5="" value="3">8 AM to 12 PM</option><option _ngcontent-c5="" value="4">12 PM to 4 PM</option><option _ngcontent-c5="" value="5">4 PM to 8 PM</option><option _ngcontent-c5="" value="6">8 PM to 0 AM</option>
+                        </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="" colspan="2">
+                        <div _ngcontent-c5="" class="input-container option-input-item departure-day-input-item">
+                          <!----><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Any day of the week" class="ng-untouched ng-pristine ng-valid">
+                        Any
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Monday" class="ng-untouched ng-pristine ng-valid">
+                        MO
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Tuesday" class="ng-untouched ng-pristine ng-valid">
+                        TU
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Wednesday" class="ng-untouched ng-pristine ng-valid">
+                        WE
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Thursday" class="ng-untouched ng-pristine ng-valid">
+                        TH
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Friday" class="ng-untouched ng-pristine ng-valid">
+                        FR
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Saturday" class="ng-untouched ng-pristine ng-valid">
+                        SA
+                        </label><label _ngcontent-c5="" class="checkbox-label">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Sunday" class="ng-untouched ng-pristine ng-valid">
+                        SU
+                        </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item to-date date-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Return Date:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            
+                            <p-calendar _ngcontent-c5="" dateformat="D dd M yy" formcontrolname="returnDate" placeholder="Return" class="ng-tns-c6-1 ng-untouched ng-pristine ng-valid">
+        <span class="ng-tns-c6-1 ui-calendar">
+            <!---->
+                <input type="text" class="form-control ng-tns-c6-1 ui-inputtext ui-widget ui-state-default ui-corner-all" id="end-date" placeholder="Return"><!---->
+            
+            <div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-shadow ng-trigger ng-trigger-overlayState" style="display: none; opacity: 0;">
+
+                <!---->
+                <!---->
+                <!---->
+                
+            </div>
+        </span>
+    </p-calendar>
+                          </div>
+                        </div>
+
+                      </td>
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Return Time:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <select _ngcontent-c5="" class="amadeus-form-item small option-input ng-untouched ng-pristine ng-valid" formcontrolname="returnTime" id="return-time" placeholder="Return Time">
+                          <!----><option _ngcontent-c5="" value="0">Any</option><option _ngcontent-c5="" value="1">0 AM to 4 AM</option><option _ngcontent-c5="" value="2">4 AM to 8 AM</option><option _ngcontent-c5="" value="3">8 AM to 12 PM</option><option _ngcontent-c5="" value="4">12 PM to 4 PM</option><option _ngcontent-c5="" value="5">4 PM to 8 PM</option><option _ngcontent-c5="" value="6">8 PM to 0 AM</option>
+                        </select>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="" colspan="2">
+                        <div _ngcontent-c5="" class="input-container option-input-item return-day-input-item">
+                          <!----><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Any day of the week" class="ng-untouched ng-pristine ng-valid">Any
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Monday" class="ng-untouched ng-pristine ng-valid">MO
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Tuesday" class="ng-untouched ng-pristine ng-valid">TU
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Wednesday" class="ng-untouched ng-pristine ng-valid">WE
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Thursday" class="ng-untouched ng-pristine ng-valid">TH
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Friday" class="ng-untouched ng-pristine ng-valid">FR
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Saturday" class="ng-untouched ng-pristine ng-valid">SA
+                      </label><label _ngcontent-c5="">
+                        <input _ngcontent-c5="" formcontrolname="departureDay" type="radio" title="Sunday" class="ng-untouched ng-pristine ng-valid">SU
+                      </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="" colspan="2">
+                        <div _ngcontent-c5="" class="input-container option-input-item airlines-input-item">
+                          <div _ngcontent-c5="" class="form-help">
+                            Airlines:
+                          </div>
+                          <div _ngcontent-c5="" class="value-container">
+                            <input _ngcontent-c5="" class="mat-input-element ng-untouched ng-pristine ng-valid" formcontrolname="airlines" id="airlines-input" mdinput="" placeholder="IATA codes separated by comma (e.g. AF, IB, LH, etc)" style="width: 330px" type="text" aria-invalid="false">
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr _ngcontent-c5="">
+                      <td _ngcontent-c5="">
+                        <div _ngcontent-c5="" class="input-container option-input-item nonstop-input-item">
+                          <input _ngcontent-c5="" formcontrolname="nonstop" id="nonstop-input" type="checkbox" class="ng-untouched ng-pristine ng-valid">Non-Stop only
+                        </div>
+                      </td>
+                      <td _ngcontent-c5=""></td>
+                    </tr>
+                  </tbody></table>
+                </div>
+              </div>
+              <input _ngcontent-c5="" class="submit button pink medium submit-button" id="submit-button" type="submit" value="Search timetables">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <!----><ul _ngcontent-c5="" class="tabs search-results-nav-tabs group nav nav-tabs" id="tabs">
+      <li _ngcontent-c5="" class="tab flights shadow-included active">
+        <a _ngcontent-c5="" class="tab-link" id="aResultsOutbound">
+        Outbound
+      </a>
+      </li>
+      <!---->
+    </ul>
+    <!----><div _ngcontent-c5="" class="tab-content" id="results">
+      <div _ngcontent-c5="" class="tab-pane">
+        <div _ngcontent-c5="" class="tools">
+          <div _ngcontent-c5="" class="filters">
+            <app-smart-filters _ngcontent-c5="" _nghost-c7=""><div _ngcontent-c7="" class="smart-filters-content">
+  
+  <!----><div _ngcontent-c7="" class="dropdown">
+    <button _ngcontent-c7="" class="smart-filter-toggle">Stops</button>
+    <div _ngcontent-c7="" class="filter-container" style="display: none;">
+      <!----><app-stops-filter _nghost-c11=""><div _ngcontent-c11="" class="dropdown dropdown-menu">
+  <!---->
+  <!----><div _ngcontent-c11="">
+    <ul _ngcontent-c11="">
+      <!----><li _ngcontent-c11="" class="legs-checkbox">
+        <input _ngcontent-c11="" type="checkbox" class="ng-untouched ng-pristine ng-valid">
+        <label _ngcontent-c11="">direct</label>
+      </li>
+    </ul>
+  </div>
+</div>
+</app-stops-filter>
+    </div>
+  </div><div _ngcontent-c7="" class="dropdown">
+    <button _ngcontent-c7="" class="smart-filter-toggle">Duration</button>
+    <div _ngcontent-c7="" class="filter-container" style="display: none;">
+      <!----><app-duration-filter _nghost-c12=""><div _ngcontent-c12="" class="dropdown dropdown-menu">
+  <!---->
+  <!----><div _ngcontent-c12="" class="max-elapsed-content group">
+    <div _ngcontent-c12="" class="elapsed-indicator lowest-elapsed">
+      2h56
+    </div>
+    <div _ngcontent-c12="" class="amadeus-slider-container blue">
+      <nouislider _ngcontent-c12="" _nghost-c13="" class="ng2-nouislider ng-untouched ng-pristine ng-valid"><div _ngcontent-c13="" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-origin" style="left: 100%;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="185" style="z-index: 4;"></div></div></div></div></nouislider>
+      <div _ngcontent-c12="" class="max-elapsed-slider-info">
+        Less than
+        <span _ngcontent-c12="" class="max-amount">
+          3h5
+        </span>
+      </div>
+    </div>
+    <div _ngcontent-c12="" class="elapsed-indicator highest-elapsed">
+      3h5
+    </div>
+  </div>
+</div>
+</app-duration-filter>
+    </div>
+  </div><div _ngcontent-c7="" class="dropdown">
+    <button _ngcontent-c7="" class="smart-filter-toggle">Departure Time</button>
+    <div _ngcontent-c7="" class="filter-container" style="display: none;">
+      <!----><app-departure-time-filter _nghost-c14=""><div _ngcontent-c14="" class="dropdown dropdown-menu">
+  <!---->
+  <!----><div _ngcontent-c14="" class="departure-time-content group">
+    <!----><div _ngcontent-c14="" class="slider-container">
+      <div _ngcontent-c14="" class="histogram" style="height: 70px;">
+        <!----><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="0h - 1h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="0h - 1h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="1h - 2h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="1h - 2h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="2h - 3h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="2h - 3h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="3h - 4h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="3h - 4h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="4h - 5h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="4h - 5h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="5h - 6h" style="height: 8.75px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="5h - 6h" style="height: 8.75px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="6h - 7h" style="height: 26.25px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="6h - 7h" style="height: 26.25px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="7h - 8h" style="height: 70px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="7h - 8h" style="height: 70px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="8h - 9h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="8h - 9h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="9h - 10h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="9h - 10h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="10h - 11h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="10h - 11h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="11h - 12h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="11h - 12h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="12h - 13h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="12h - 13h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="13h - 14h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="13h - 14h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="14h - 15h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="14h - 15h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="15h - 16h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="15h - 16h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="16h - 17h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="16h - 17h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="17h - 18h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="17h - 18h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="18h - 19h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="18h - 19h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="19h - 20h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="19h - 20h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="20h - 21h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="20h - 21h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="21h - 22h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="21h - 22h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="22h - 23h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="22h - 23h" style="height: 0px;"></div>
+        </div><div _ngcontent-c14="" class="bargroup">
+          <div _ngcontent-c14="" class="bar total" title="23h - 24h" style="height: 0px;"></div>
+          <div _ngcontent-c14="" class="bar matched" title="23h - 24h" style="height: 0px;"></div>
+        </div>
+      </div>
+      <nouislider _ngcontent-c14="" _nghost-c13="" class="ng2-nouislider ng-untouched ng-pristine ng-valid"><div _ngcontent-c13="" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-origin" style="left: 0%;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0" style="z-index: 5;"></div></div><div class="noUi-connect" style="left: 0%; right: 0%;"></div><div class="noUi-origin" style="left: 100%;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="24" style="z-index: 4;"></div></div></div></div></nouislider>
+      <div _ngcontent-c14="" class="max-price-slider-info">
+        Outbound between 0 and 24
+      </div>
+    </div>
+  </div>
+</div>
+</app-departure-time-filter>
+    </div>
+  </div>
+
+</div>
+</app-smart-filters>
+          </div>
+          
+
+<!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+
+    <!-- DatatablesJS | Mark -->
+    <script src="assets/javascript/datatables.js"></script>
+    <!-- MomenJS CDN | Mark-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
+    <!--====== UNDERSCORE===== -->
+    <!-- underscore JS library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- Added Jquery UI Libraries wenfang -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- ===== FIREBASE ====== -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <!--====== YOUR LOCAL JS FILE ===== -->
+    <!-- link to user JS file. Name will change -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+        <!-- Amadeus API JS -->
+    <script src="assets/javascript/amadeus.js"></script>
+    <script src="assets/javascript/amadeus_inline.js"></script>
+<!--     <script src="assets/javascript/amadeus_poly.js"></script> -->
+    <script src="assets/javascript/amadeus_vendor.js"></script>
+    <script src="assets/javascript/amadeus_platform.js"></script>
+    
+    
+    
+    
+</body>
+
+</html>
